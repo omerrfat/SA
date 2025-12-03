@@ -8,9 +8,9 @@ const Home = () => {
     const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
 
     const campusImages = [
-        '/public/campus.jpg',
-        '/public/campus3.jpg',
-        '/public/campus2.jpg',
+        '/campus.jpg',
+        '/campus3.jpg',
+        '/campus2.jpg',
     ];
 
     const executives = [
@@ -18,7 +18,7 @@ const Home = () => {
             name: 'Jorden Yap',
             position: 'SA President',
             email: 'sapresident@nottingham.edu.my',
-            image: '/public/Jorden.JPG',
+            image: '/Jorden.JPG',
             description: 'The SA President leads the association, represents student interests, and oversees major initiatives. In addition, the President manages event finances and drives sponsorship efforts to support sustainable funding.',
 
         },
@@ -42,7 +42,7 @@ const Home = () => {
             name: 'Manahil Asad',
             position: 'Sports Officer',
             email: 'sasports@nottingham.edu.my',
-            image: '/public/sports-officer.jpeg',
+            image: '/sports-officer.jpeg',
             description: 'The  Sports Officer oversees the wellbeing and smooth functioning of all sports clubs and athletes, plan and manage major sports events like Nations Cup, coordinate logistics and ensure safety and compliance. Sports Officer also liaise closely with the sports complex, and external sporting bodies to support the athletes and teams.',
 
         },
