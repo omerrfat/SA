@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Users, ShoppingBag, UserCheck, Briefcase, Dumbbell, Ticket } from 'lucide-react';
+import { Menu, X, Users, ShoppingBag, UserCheck, Briefcase, Dumbbell, Ticket, ChevronDown } from 'lucide-react';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isAboutOpen, setIsAboutOpen] = useState(false);
     const location = useLocation();
 
     const navigationItems = [
@@ -12,6 +13,10 @@ const Header = () => {
         { name: 'Event Tickets', path: '/tickets', icon: Ticket },
         { name: 'Registration', path: '/registration', icon: UserCheck },
         { name: 'Jobs', path: '/jobs', icon: Briefcase },
+    ];
+
+    const aboutItems = [
+        { name: 'Student Executives', path: '/student-executives' },
     ];
 
     const toggleMenu = () => {
@@ -57,6 +62,41 @@ const Header = () => {
                                 </Link>
                             );
                         })}
+
+                        {/* About Us Dropdown */}
+                        <div className="relative group">
+                            <button
+                                className="flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors duration-200"
+                                onMouseEnter={() => setIsAboutOpen(true)}
+                                onMouseLeave={() => setIsAboutOpen(false)}
+                            >
+                                <span>About Us</span>
+                                <ChevronDown className="w-4 h-4" />
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            <div
+                                className={`absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-200 transform origin-top ${isAboutOpen
+                                    ? 'opacity-100 scale-y-100 visible'
+                                    : 'opacity-0 scale-y-95 invisible'
+                                    }`}
+                                onMouseEnter={() => setIsAboutOpen(true)}
+                                onMouseLeave={() => setIsAboutOpen(false)}
+                            >
+                                {aboutItems.map((item) => (
+                                    <Link
+                                        key={item.name}
+                                        to={item.path}
+                                        className={`block px-4 py-3 text-sm font-medium transition-colors duration-200 ${location.pathname === item.path
+                                            ? 'text-white bg-purple-600'
+                                            : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
+                                            }`}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -75,7 +115,7 @@ const Header = () => {
 
                 {/* Mobile Navigation */}
                 <div
-                    className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+                    className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                         }`}
                 >
                     <nav className="py-4 space-y-2">
@@ -96,6 +136,33 @@ const Header = () => {
                                 </Link>
                             );
                         })}
+
+                        {/* Mobile About Us Section */}
+                        <div className="px-4 py-3">
+                            <button
+                                onClick={() => setIsAboutOpen(!isAboutOpen)}
+                                className="flex items-center space-x-3 w-full text-sm font-medium text-gray-700 hover:text-purple-600"
+                            >
+                                <span>About Us</span>
+                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} />
+                            </button>
+
+                            {/* Mobile Dropdown */}
+                            {isAboutOpen && (
+                                <div className="mt-2 ml-4 space-y-2">
+                                    {aboutItems.map((item) => (
+                                        <Link
+                                            key={item.name}
+                                            to={item.path}
+                                            onClick={closeMenu}
+                                            className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </nav>
                 </div>
             </div>

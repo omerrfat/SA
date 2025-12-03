@@ -6,7 +6,7 @@ import NottAShop from './pages/NottAShop';
 import EventTickets from './pages/EventTickets';
 import Registration from './pages/Registration';
 import Jobs from './pages/Jobs';
-
+import StudentExecutives from './pages/StudentExecutives';
 
 function App() {
     return (
@@ -20,6 +20,7 @@ function App() {
                         <Route path="/tickets" element={<EventTickets />} />
                         <Route path="/registration" element={<Registration />} />
                         <Route path="/jobs" element={<Jobs />} />
+                        <Route path="/student-executives" element={<StudentExecutives />} />
                     </Routes>
                 </main>
             </div>
