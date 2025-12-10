@@ -7,46 +7,11 @@ const NottAShop = () => {
 
     const categories = [
         { id: 'all', name: 'All Items', icon: ShoppingBag },
-        { id: 'thrift', name: 'Thrift Items', icon: Shirt },
         { id: 'club-merch', name: 'Club Merchandise', icon: ShoppingBag },
         { id: 'official', name: 'Official Nottingham', icon: ShoppingBag },
     ];
 
     const products = [
-        // Thrift Items
-        {
-            id: 1,
-            name: 'Vintage Denim Jacket',
-            price: 'RM15.00',
-            category: 'thrift',
-            type: 'Thrift',
-            image: 'https://images.pexels.com/photos/1148957/pexels-photo-1148957.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.4,
-            inStock: true,
-            condition: 'Good',
-        },
-        {
-            id: 2,
-            name: 'Retro Band T-Shirt',
-            price: 'RM8.00',
-            category: 'thrift',
-            type: 'Thrift',
-            image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.2,
-            inStock: true,
-            condition: 'Excellent',
-        },
-        {
-            id: 3,
-            name: 'Wool Sweater',
-            price: 'RM12.00',
-            category: 'thrift',
-            type: 'Thrift',
-            image: 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.6,
-            inStock: true,
-            condition: 'Very Good',
-        },
         // Club Merchandise
         {
             id: 4,
@@ -206,15 +171,6 @@ const NottAShop = () => {
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span className="text-2xl font-bold text-purple-600">{product.price}</span>
-                                    <button
-                                        disabled={!product.inStock}
-                                        className={`px-4 py-2 rounded-lg font-semibold transition-colors duration-200 ${product.inStock
-                                            ? 'bg-purple-600 text-white hover:bg-purple-700'
-                                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                            }`}
-                                    >
-                                        Add to Cart
-                                    </button>
                                 </div>
                             </div>
                         </div>

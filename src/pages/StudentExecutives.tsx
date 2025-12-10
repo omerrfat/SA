@@ -10,7 +10,7 @@ const StudentExecutives = () => {
             name: 'Jorden Yap',
             position: 'SA President',
             email: 'sapresident@nottingham.edu.my',
-            image: '/public/Jorden.JPG',
+            image: '/Jorden.JPG',
             description: 'The SA President leads the association, represents student interests, and oversees major initiatives. In addition, the President manages event finances and drives sponsorship efforts to support sustainable funding.',
             color: 'from-purple-600 to-purple-800',
         },
@@ -18,7 +18,7 @@ const StudentExecutives = () => {
             name: 'Chan Zhi Chen',
             position: 'Vice President',
             email: 'kasavp@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/Zhi Chen.jpg',
             description: 'Supporting the President and overseeing club operations. Committed to fostering collaboration and student engagement across campus.',
             color: 'from-blue-600 to-blue-800',
         },
@@ -34,7 +34,7 @@ const StudentExecutives = () => {
             name: 'Manahil Asad',
             position: 'Sports Officer',
             email: 'sasports@nottingham.edu.my',
-            image: '/public/sports-officer.jpeg',
+            image: '/sports-officer.jpeg',
             description: 'The Sports Officer oversees the wellbeing and smooth functioning of all sports clubs and athletes, plan and manage major sports events like Nations Cup, coordinate logistics and ensure safety and compliance.',
             color: 'from-red-600 to-red-800',
         },
@@ -58,7 +58,7 @@ const StudentExecutives = () => {
             name: 'Myra Mazhar Ud Deen',
             position: 'International Students\' Officer',
             email: 'sainternational@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/Myra Mazhar Ud Deen.PNG',
             description: 'Supporting international students and ensuring they feel welcomed and integrated into campus life. Organizing cultural events and providing support services.',
             color: 'from-indigo-600 to-indigo-800',
         },
@@ -152,22 +152,23 @@ const StudentExecutives = () => {
                             <img
                                 src={currentExec.image}
                                 alt={currentExec.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                                style={{
+                                    objectPosition: currentExec.name === 'Myra Mazhar Ud Deen' ? 'center 30%' : 'center'
+                                }}
                             />
                         </div>
-
                         {/* Content Overlay */}
                         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent">
                             <div className="text-white">
-                                <p className="text-sm md:text-base font-semibold text-gray-200 mb-2">Position</p>
-                                <h3 className="text-4xl md:text-5xl font-bold mb-2">{currentExec.name}</h3>
-                                <p className="text-2xl md:text-3xl text-gray-100 mb-4">{currentExec.position}</p>
-                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed">
+                                <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{currentExec.name}</h3>
+                                <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-lg">{currentExec.position}</p>
+                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-md">
                                     {currentExec.description}
                                 </p>
                                 <div className="flex items-center space-x-2">
-                                    <Mail className="w-5 h-5" />
-                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline">
+                                    <Mail className="w-5 h-5 drop-shadow-md" />
+                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-md">
                                         {currentExec.email}
                                     </a>
                                 </div>

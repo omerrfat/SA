@@ -10,7 +10,7 @@ const Header = () => {
     const navigationItems = [
         { name: 'Home', path: '/', icon: Users },
         { name: 'Nott-a-Shop', path: '/shop', icon: ShoppingBag },
-        { name: 'Event Tickets', path: '/tickets', icon: Ticket },
+        { name: 'Events', path: '/tickets', icon: Ticket },
         { name: 'Registration', path: '/registration', icon: UserCheck },
         { name: 'Jobs', path: '/jobs', icon: Briefcase },
     ];

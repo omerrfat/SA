@@ -26,8 +26,8 @@ const Home = () => {
             name: 'Chan Zhi Chen',
             position: 'Vice President',
             email: 'kasavp@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Supporting the President and overseeing club operations. Committed to fostering collaboration and student engagement across campus.',
+            image: '/Zhi Chen.jpg',
+            description: 'The Vice President plays a key role in overseeing the overall affairs of the Students’ Association, ensuring smooth coordination across all departments and initiatives.',
 
         },
         {
@@ -66,8 +66,8 @@ const Home = () => {
             name: 'Myra Mazhar Ud Deen',
             position: 'International Students\' Officer',
             email: 'sainternational@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
+            image: '/Myra Mazhar Ud Deen.PNG',
+            description: 'To serve as the first student point of contact for international students, and to bridge the gap between students and university management, while promoting cultural awareness across campus.',
 
         },
         {
@@ -83,7 +83,8 @@ const Home = () => {
             position: 'Education Officer',
             email: 'saeducation@nottingham.edu.my',
             image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
+            description: 'The Education Officer oversees the academic wellbeing and representation of all students, ensuring clear communication between the student body and the University’s academic departments. The officer leads the Faculty, School and Course Representatives, provides training and guidance throughout the year, and ensures effective preparation and delivery of the Staff–Student Forums (SSFs).',
+
 
         },
         {
@@ -267,20 +268,23 @@ const Home = () => {
                                 src={currentExec.image}
                                 alt={currentExec.name}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                style={{
+                                    objectPosition: currentExec.name === 'Myra Mazhar Ud Deen' ? 'center 30%' : 'center'
+                                }}
                             />
                         </div>
 
                         {/* Content Overlay */}
                         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
                             <div className="text-white">
-                                <h3 className="text-4xl md:text-5xl font-bold mb-2">{currentExec.name}</h3>
-                                <p className="text-2xl md:text-3xl text-gray-100 mb-4">{currentExec.position}</p>
-                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed">
+                                <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{currentExec.name}</h3>
+                                <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-lg">{currentExec.position}</p>
+                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-md">
                                     {currentExec.description}
                                 </p>
                                 <div className="flex items-center space-x-2">
-                                    <span className="text-sm md:text-base">📧</span>
-                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline">
+                                    <span className="text-sm md:text-base drop-shadow-md">📧</span>
+                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-md">
                                         {currentExec.email}
                                     </a>
                                 </div>

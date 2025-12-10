@@ -144,18 +144,14 @@ const Registration = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
                     <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-                        <div className="text-3xl font-bold text-purple-600 mb-2">150+</div>
+                        <div className="text-3xl font-bold text-purple-600 mb-2">80+</div>
                         <div className="text-gray-600">Active Clubs</div>
                     </div>
                     <div className="bg-white rounded-xl p-6 text-center shadow-lg">
                         <div className="text-3xl font-bold text-yellow-500 mb-2">2,500+</div>
                         <div className="text-gray-600">Members</div>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-                        <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
-                        <div className="text-gray-600">Satisfaction Rate</div>
                     </div>
                 </div>
 
