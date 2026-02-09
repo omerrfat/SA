@@ -1,14 +1,55 @@
-import React, { useState } from 'react';
-import { ShoppingBag, Shirt, Star, Search } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ShoppingBag, Shirt, Star, Search, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const NottAShop = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [activeCategory, setActiveCategory] = useState('all');
+    const modelPhotosRef = useRef(null);
+
+    // Hide scrollbar styles
+    React.useEffect(() => {
+        const style = document.createElement('style');
+        style.textContent = `
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+        `;
+        document.head.appendChild(style);
+        return () => document.head.removeChild(style);
+    }, []);
 
     const categories = [
         { id: 'all', name: 'All Items', icon: ShoppingBag },
         { id: 'club-merch', name: 'Club Merchandise', icon: ShoppingBag },
         { id: 'official', name: 'Official Nottingham', icon: ShoppingBag },
+    ];
+
+    const modelPhotos = [
+        {
+            id: 1,
+            url: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600',
+            caption: 'CS Society T-Shirt',
+        },
+        {
+            id: 2,
+            url: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600',
+            caption: 'Official Nottingham Hoodie',
+        },
+        {
+            id: 3,
+            url: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600',
+            caption: 'Football Club Jersey',
+        },
+        {
+            id: 4,
+            url: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600',
+            caption: 'Casual Thrift Style',
+        },
+        {
+            id: 5,
+            url: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
+            caption: 'Photography Club Tote Bag',
+        },
     ];
 
     const products = [
@@ -78,6 +119,18 @@ const NottAShop = () => {
         return matchesCategory && matchesSearch;
     });
 
+    const scrollLeft = () => {
+        if (modelPhotosRef.current) {
+            modelPhotosRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (modelPhotosRef.current) {
+            modelPhotosRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 pt-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,6 +142,58 @@ const NottAShop = () => {
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         featuring merchandise from Nott-A-Shop, various clubs & societies and 2nd hand thrift items.
                     </p>
+                </div>
+                {/* Model Photos Section */}
+                <div className="mb-12">
+                    <div className="relative">
+                        {/* Left Scroll Button */}
+                        <button
+                            onClick={scrollLeft}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+                            aria-label="Scroll left"
+                        >
+                            <ChevronLeft className="w-6 h-6 text-purple-600" />
+                        </button>
+
+                        {/* Right Scroll Button */}
+                        <button
+                            onClick={scrollRight}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+                            aria-label="Scroll right"
+                        >
+                            <ChevronRight className="w-6 h-6 text-purple-600" />
+                        </button>
+
+                        {/* Scrollable Gallery */}
+                        <div
+                            ref={modelPhotosRef}
+                            className="flex gap-6 overflow-x-auto scroll-smooth px-12 hide-scrollbar"
+                            style={{
+                                scrollBehavior: 'smooth',
+                                scrollbarWidth: 'none',
+                                msOverflowStyle: 'none'
+                            }}
+                        >
+                            {modelPhotos.map((photo) => (
+                                <div
+                                    key={photo.id}
+                                    className="flex-shrink-0 w-96 h-[28rem] rounded-2xl overflow-hidden shadow-lg group"
+                                >
+                                    <div className="relative w-full h-full">
+                                        <img
+                                            src={photo.url}
+                                            alt={photo.caption}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                        {/* Overlay with Caption */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <p className="text-white font-semibold text-lg">{photo.caption}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
                 {/* Search and Filter */}
