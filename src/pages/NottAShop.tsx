@@ -61,8 +61,6 @@ const NottAShop = () => {
             category: 'club-merch',
             type: 'Club Merch',
             image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.8,
-            inStock: true,
             condition: 'New',
         },
         {
@@ -72,8 +70,6 @@ const NottAShop = () => {
             category: 'club-merch',
             type: 'Club Merch',
             image: 'https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.7,
-            inStock: true,
             condition: 'New',
         },
         {
@@ -83,8 +79,6 @@ const NottAShop = () => {
             category: 'club-merch',
             type: 'Club Merch',
             image: 'https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.5,
-            inStock: true,
             condition: 'New',
         },
         // Official Nottingham Merchandise
@@ -95,8 +89,7 @@ const NottAShop = () => {
             category: 'official',
             type: 'Official Merch',
             image: 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.9,
-            inStock: true,
+
             condition: 'New',
         },
         {
@@ -106,8 +99,6 @@ const NottAShop = () => {
             category: 'official',
             type: 'Official Merch',
             image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400',
-            rating: 4.6,
-            inStock: true,
             condition: 'New',
         },
     ];
@@ -260,22 +251,14 @@ const NottAShop = () => {
                                         {product.condition}
                                     </span>
                                 </div>
-                                {!product.inStock && (
-                                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                                        <span className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">
-                                            Out of Stock
-                                        </span>
-                                    </div>
-                                )}
                             </div>
                             <div className="p-6">
                                 <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
-                                <div className="flex items-center space-x-1 mb-3">
-                                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                                    <span className="text-sm text-gray-600">{product.rating}</span>
-                                </div>
                                 <div className="flex items-center justify-between">
                                     <span className="text-2xl font-bold text-purple-600">{product.price}</span>
+                                </div>
+                                <div>
+                                    <p>Small Description</p>
                                 </div>
                             </div>
                         </div>
