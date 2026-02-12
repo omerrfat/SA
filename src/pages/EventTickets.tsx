@@ -170,10 +170,10 @@ const EventTickets = () => {
     return (
         <div className="min-h-screen bg-gray-50 pt-8">
             {/* Calendar Hamburger Menu */}
-            <div className="fixed left-0 top-0 z-40 pt-16">
+            <div className="fixed left-0 top-16 z-40">
                 <button
                     onClick={() => setIsCalendarOpen(!isCalendarOpen)}
-                    className="bg-purple-600 text-white p-4 rounded-r-lg hover:bg-purple-700 transition-colors"
+                    className="bg-purple-600 text-white p-4 rounded-r-lg hover:bg-purple-700 transition-colors shadow-lg"
                     aria-label="Toggle calendar"
                 >
                     {isCalendarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -184,7 +184,7 @@ const EventTickets = () => {
             <div
                 className={`fixed left-0 top-0 z-30 w-80 h-full bg-white shadow-2xl transition-transform duration-300 ease-in-out pt-20 overflow-y-auto ${isCalendarOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
-            >star
+            >
                 <div className="p-6">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Live Calendar</h2>
 
@@ -379,13 +379,13 @@ const EventTickets = () => {
                 />
             )}
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ml-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-8 sm:mb-12">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
                         Upcoming Student Association <span className="text-purple-600">Events</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 break-words">
                         Register for exciting events organized by clubs and societies across campus
                     </p>
                 </div>
@@ -437,46 +437,48 @@ const EventTickets = () => {
                                     className="w-full lg:w-80 h-64 lg:h-auto object-cover"
                                 />
 
-                                <div className="flex-1 p-6">
-                                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                                        <div className="flex-1">
-                                            <h3 className="text-2xl font-bold text-gray-900 mb-2">{event.name}</h3>
-                                            <div className="flex items-center text-gray-600 mb-2">
-                                                <Users className="w-4 h-4 mr-2" />
-                                                <span className="text-sm">Organized by {event.organizer}</span>
-                                                <div className="flex items-center ml-4">
-                                                    <Star className="w-4 h-4 text-yellow-400 fill-current mr-1" />
-                                                    <span className="text-sm">{event.rating}</span>
+                                <div className="flex-1 p-4 sm:p-6">
+                                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-4">
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2 break-words">{event.name}</h3>
+                                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 text-gray-600 mb-2 text-sm">
+                                                <div className="flex items-center">
+                                                    <Users className="w-4 h-4 mr-2 flex-shrink-0" />
+                                                    <span className="break-words">Organized by {event.organizer}</span>
+                                                </div>
+                                                <div className="flex items-center sm:ml-4">
+                                                    <Star className="w-4 h-4 text-yellow-400 fill-current mr-1 flex-shrink-0" />
+                                                    <span>{event.rating}</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="text-right">
-                                            <div className="text-3xl font-bold text-purple-600 mb-1">
+                                        <div className="sm:text-right flex-shrink-0">
+                                            <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">
                                                 {event.price}
                                             </div>
-                                            <div className="text-sm text-gray-600">
+                                            <div className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">
                                                 {event.sold}/{event.capacity} registered
                                             </div>
                                         </div>
                                     </div>
 
-                                    <p className="text-gray-600 mb-4">{event.description}</p>
+                                    <p className="text-gray-600 mb-4 text-sm sm:text-base break-words">{event.description}</p>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                                        <div className="flex items-center text-sm text-gray-600">
-                                            <Calendar className="w-4 h-4 mr-2 text-purple-600" />
-                                            <div>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6 text-xs sm:text-sm">
+                                        <div className="flex items-start sm:items-center gap-2 text-gray-600 min-w-0">
+                                            <Calendar className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5 sm:mt-0" />
+                                            <div className="break-words">
                                                 <div className="font-medium">{formatDate(event.date)}</div>
                                             </div>
                                         </div>
-                                        <div className="flex items-center text-sm text-gray-600">
-                                            <Clock className="w-4 h-4 mr-2 text-blue-600" />
-                                            <span>{event.time}</span>
+                                        <div className="flex items-center gap-2 text-gray-600 min-w-0">
+                                            <Clock className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                                            <span className="break-words">{event.time}</span>
                                         </div>
-                                        <div className="flex items-center text-sm text-gray-600">
-                                            <MapPin className="w-4 h-4 mr-2 text-red-600" />
-                                            <span>{event.location}</span>
+                                        <div className="flex items-start sm:items-center gap-2 text-gray-600 min-w-0">
+                                            <MapPin className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5 sm:mt-0" />
+                                            <span className="break-words">{event.location}</span>
                                         </div>
                                     </div>
 
