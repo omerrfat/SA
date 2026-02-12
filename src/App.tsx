@@ -7,6 +7,7 @@ import EventTickets from './pages/EventTickets';
 import Registration from './pages/Registration';
 import Jobs from './pages/Jobs';
 import StudentExecutives from './pages/StudentExecutives';
+import StudentCouncil from './pages/StudentCouncil';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                         <Route path="/registration" element={<Registration />} />
                         <Route path="/jobs" element={<Jobs />} />
                         <Route path="/student-executives" element={<StudentExecutives />} />
+                        <Route path="/student-council" element={<StudentCouncil />} />
                     </Routes>
                 </main>
             </div>

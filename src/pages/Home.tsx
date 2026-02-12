@@ -34,7 +34,7 @@ const Home = () => {
             name: 'Nurul Aisyah Syakinah binti Rodzay',
             position: 'SA Secretary',
             email: 'sasecretary@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/Aisyah.jpeg',
             description: 'Managing communications and documentation. Ensuring smooth operations and keeping everyone informed and connected.',
 
         },
@@ -43,14 +43,14 @@ const Home = () => {
             position: 'Sports Officer',
             email: 'sasports@nottingham.edu.my',
             image: '/sports-officer.jpeg',
-            description: 'The  Sports Officer oversees the wellbeing and smooth functioning of all sports clubs and athletes, plan and manage major sports events like Nations Cup, coordinate logistics and ensure safety and compliance. Sports Officer also liaise closely with the sports complex, and external sporting bodies to support the athletes and teams.',
+            description: 'The Sports Officer manages athlete wellbeing and club operations, organizes major events like the Nations Cup, and liaises with external bodies to ensure safety and logistical support.',
 
         },
         {
             name: 'Sakeena Endah Muzli',
             position: 'Sustainability Officer',
             email: 'sasustainability@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/Kiki.jpeg',
             description: 'Leading sustainability initiatives and environmental advocacy. Creating a greener campus for future generations.',
 
         },
@@ -58,7 +58,7 @@ const Home = () => {
             name: 'Farzana Binti Suhaimi',
             position: 'Home Students\' Officer',
             email: 'sahome@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/Zee.jpeg',
             description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
 
         },
@@ -74,7 +74,7 @@ const Home = () => {
             name: 'Marissa Alysha Iman',
             position: 'Activities Officer',
             email: 'saactivities@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/Marsi.jpeg',
             description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
 
         },
@@ -82,10 +82,8 @@ const Home = () => {
             name: 'Leo Raymond',
             position: 'Education Officer',
             email: 'saeducation@nottingham.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'The Education Officer oversees the academic wellbeing and representation of all students, ensuring clear communication between the student body and the University’s academic departments. The officer leads the Faculty, School and Course Representatives, provides training and guidance throughout the year, and ensures effective preparation and delivery of the Staff–Student Forums (SSFs).',
-
-
+            image: '/Leo.JPG',
+            description: 'The Education Officer advocates for students’ academic interests and bridges the gap between the student body and university departments. They lead and train the representative network—from Faculty to Course levels—and manage the execution of Staff–Student Forums (SSFs).'
         },
         {
             name: 'Samuel Ogbonna Akuma',
@@ -277,14 +275,14 @@ const Home = () => {
                         {/* Content Overlay */}
                         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
                             <div className="text-white">
-                                <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{currentExec.name}</h3>
-                                <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-lg">{currentExec.position}</p>
-                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-md">
+                                <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-2xl">{currentExec.name}</h3>
+                                <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-2xl">{currentExec.position}</p>
+                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-lg">
                                     {currentExec.description}
                                 </p>
                                 <div className="flex items-center space-x-2">
-                                    <span className="text-sm md:text-base drop-shadow-md">📧</span>
-                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-md">
+                                    <span className="text-sm md:text-base drop-shadow-lg">📧</span>
+                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-lg">
                                         {currentExec.email}
                                     </a>
                                 </div>
