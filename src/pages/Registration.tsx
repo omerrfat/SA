@@ -101,11 +101,11 @@ const Registration = () => {
         <div className="min-h-screen bg-gray-50 pt-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-12 animate-fade-in">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-slide-down">
                         Club & Society <span className="text-purple-600">Registration</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
                         Discover amazing communities, make lifelong friends, and pursue your passions
                     </p>
                 </div>
@@ -157,10 +157,13 @@ const Registration = () => {
 
                 {/* Clubs Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                    {filteredClubs.map((club) => (
+                    {filteredClubs.map((club, index) => (
                         <div
                             key={club.id}
-                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden animate-scale-in hover:scale-105"
+                            style={{
+                                animationDelay: `${index * 100}ms`,
+                            }}
                         >
                             <div className="flex">
                                 <img

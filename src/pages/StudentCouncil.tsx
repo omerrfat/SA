@@ -53,12 +53,12 @@ const StudentCouncil = () => {
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
             <section className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-12 md:py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center space-x-4 mb-4">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
+                    <div className="flex items-center space-x-4 mb-4 animate-slide-in-left">
                         <Users className="w-8 h-8 md:w-10 md:h-10" />
                         <h1 className="text-3xl md:text-5xl font-bold">Student Council</h1>
                     </div>
-                    <p className="text-lg md:text-xl text-purple-100 max-w-3xl">
+                    <p className="text-lg md:text-xl text-purple-100 max-w-3xl animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
                         The Student Council works to improve the student experience and coordinate key initiatives across campus.
                     </p>
                 </div>
@@ -67,11 +67,11 @@ const StudentCouncil = () => {
             {/* Council Members Section */}
             <section className="py-12 md:py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-12 animate-fade-in">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
                             Council Leadership
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto animate-slide-up">
                             Meet the dedicated team leading the Student Council.
                         </p>
                     </div>
@@ -80,7 +80,8 @@ const StudentCouncil = () => {
                         {councilMembers.map((member, index) => (
                             <div
                                 key={index}
-                                className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white`}
+                                className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white animate-scale-in hover:scale-105`}
+                                style={{ animationDelay: `${index * 150}ms` }}
                             >
                                 {/* Image */}
                                 <div className="relative h-72 md:h-[420px] overflow-hidden bg-gray-200">

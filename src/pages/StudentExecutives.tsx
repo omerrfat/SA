@@ -136,17 +136,17 @@ const StudentExecutives = () => {
             {/* Main Carousel Section */}
             <section className="py-20 bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-12 animate-fade-in">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
                             Meet the Team
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
                             Click through to learn more about each executive and their roles.
                         </p>
                     </div>
 
                     {/* Main Carousel */}
-                    <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
+                    <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group animate-scale-in">
                         {/* Background Image with Overlay */}
                         <div className="absolute inset-0">
                             <img
@@ -212,11 +212,11 @@ const StudentExecutives = () => {
             {/* Full Grid Section */}
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-12 animate-fade-in">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
                             The Full Executive Team
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
                             Representing every aspect of student life at the University of Nottingham Malaysia.
                         </p>
                     </div>
@@ -226,7 +226,8 @@ const StudentExecutives = () => {
                             <div
                                 key={index}
                                 onClick={() => goToExec(index)}
-                                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group animate-scale-in hover:scale-110"
+                                style={{ animationDelay: `${index * 50}ms` }}
                             >
                                 {/* Image Container */}
                                 <div className="relative h-64 overflow-hidden bg-gray-200">

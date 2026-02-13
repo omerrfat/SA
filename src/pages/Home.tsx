@@ -195,25 +195,25 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                         {/* Text Content - Left Side */}
-                        <div className="text-white">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <div className="text-white animate-fade-in">
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-down">
                                 Welcome to the{' '}
                                 <span className="text-yellow-400 block">Students' Association</span>
                             </h1>
-                            <p className="text-lg md:text-xl mb-8 text-purple-100 max-w-2xl leading-relaxed">
+                            <p className="text-lg md:text-xl mb-8 text-purple-100 max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
                                 Your one-stop destination for thrift shopping, event tickets, club registration, and student job opportunities at the University of Nottingham Malaysia.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
                                 <Link
                                     to="/shop"
-                                    className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 flex items-center justify-center space-x-2 shadow-lg"
+                                    className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
                                 >
                                     <ShoppingBag className="w-5 h-5" />
                                     <span>Explore Shop</span>
                                 </Link>
                                 <Link
                                     to="/registration"
-                                    className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-900 transition-colors duration-200 flex items-center justify-center space-x-2"
+                                    className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-900 transition-colors duration-200 transform hover:scale-105 flex items-center justify-center space-x-2"
                                 >
                                     <UserCheck className="w-5 h-5" />
                                     <span>Join Clubs</span>
@@ -360,11 +360,11 @@ const Home = () => {
             {/* Features Section */}
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-16 animate-fade-in">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
                             Everything You Need in One Place
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
                             From thrift shopping and event tickets to club registration and job opportunities, we've got you covered.
                         </p>
                     </div>
@@ -375,7 +375,8 @@ const Home = () => {
                             return (
                                 <div
                                     key={index}
-                                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group animate-scale-in hover:scale-105"
+                                    style={{ animationDelay: `${index * 100}ms` }}
                                 >
                                     <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
                                     <div className="p-8">

@@ -381,24 +381,24 @@ const EventTickets = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-8 sm:mb-12">
-                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
+                <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words animate-slide-down">
                         Upcoming Student Association <span className="text-purple-600">Events</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 break-words">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 break-words animate-slide-up">
                         Register for exciting events organized by clubs and societies across campus
                     </p>
                 </div>
 
                 {/* CTA Section */}
-                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-8 text-center text-white">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-8 text-center text-white animate-scale-in">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4 animate-slide-down">
                         Want to Organize Your Own Event?
                     </h2>
-                    <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
+                    <p className="text-purple-100 mb-6 max-w-2xl mx-auto animate-slide-up">
                         Contact the Students' Association to get help organizing and promoting your club or society events.
                     </p>
-                    <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200">
+                    <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 hover:scale-105 transform">
                         Include My Event
                     </button>
                 </div>

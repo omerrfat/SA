@@ -53,7 +53,7 @@ const Header = () => {
                                 <Link
                                     key={item.name}
                                     to={item.path}
-                                    className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${location.pathname === item.path
+                                    className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 ${location.pathname === item.path
                                         ? 'text-white bg-purple-600'
                                         : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
                                         }`}
