@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Calendar, MapPin, Star, Search, Filter, ArrowRight } from 'lucide-react';
+import { Users, Search, Filter, ArrowRight } from 'lucide-react';
 
 const Registration = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -171,10 +171,6 @@ const Registration = () => {
                                 <div className="flex-1 p-6">
                                     <div className="flex items-start justify-between mb-3">
                                         <h3 className="font-bold text-xl text-gray-900">{club.name}</h3>
-                                        <div className="flex items-center space-x-1">
-                                            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                                            <span className="text-sm text-gray-600">{club.rating}</span>
-                                        </div>
                                     </div>
 
                                     <p className="text-gray-600 mb-4 line-clamp-2">{club.description}</p>
@@ -183,14 +179,6 @@ const Registration = () => {
                                         <div className="flex items-center text-sm text-gray-600">
                                             <Users className="w-4 h-4 mr-2" />
                                             {club.members} members
-                                        </div>
-                                        <div className="flex items-center text-sm text-gray-600">
-                                            <Calendar className="w-4 h-4 mr-2" />
-                                            {club.meetingTime}
-                                        </div>
-                                        <div className="flex items-center text-sm text-gray-600">
-                                            <MapPin className="w-4 h-4 mr-2" />
-                                            {club.location}
                                         </div>
                                     </div>
 
@@ -206,7 +194,7 @@ const Registration = () => {
                                     </div>
 
                                     <button className="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center space-x-2">
-                                        <span>Join Club</span>
+                                        <span>Get in Contact</span>
                                         <ArrowRight className="w-4 h-4" />
                                     </button>
                                 </div>

@@ -390,6 +390,19 @@ const EventTickets = () => {
                     </p>
                 </div>
 
+                {/* CTA Section */}
+                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-8 text-center text-white">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                        Want to Organize Your Own Event?
+                    </h2>
+                    <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
+                        Contact the Students' Association to get help organizing and promoting your club or society events.
+                    </p>
+                    <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200">
+                        Include My Event
+                    </button>
+                </div>
+
                 {/* Search and Filter */}
                 <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
                     <div className="flex flex-col lg:flex-row gap-4">
@@ -525,18 +538,6 @@ const EventTickets = () => {
                     </div>
                 )}
 
-                {/* CTA Section */}
-                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-8 text-center text-white">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                        Want to Organize Your Own Event?
-                    </h2>
-                    <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-                        Contact the Students' Association to get help organizing and promoting your club or society events.
-                    </p>
-                    <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200">
-                        Get Event Support
-                    </button>
-                </div>
             </div>
         </div>
     );

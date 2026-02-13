@@ -24,98 +24,7 @@ const Jobs = () => {
         { id: 'internship', name: 'Internship' },
     ];
 
-    const jobs = [
-        {
-            id: 1,
-            title: 'Student Library Assistant',
-            company: 'University Library',
-            category: 'campus',
-            type: 'work-study',
-            location: 'On Campus',
-            salary: 'RM9.50/hour',
-            hours: '10-15 hours/week',
-            description: 'Help students find resources, maintain library organization, and assist with digital services.',
-            requirements: ['Excellent communication skills', 'Detail-oriented', 'Flexible schedule'],
-            posted: '2 days ago',
-            rating: 4.8,
-            image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400',
-        },
-        {
-            id: 2,
-            title: 'Math Tutor',
-            company: 'Academic Success Center',
-            category: 'tutoring',
-            type: 'part-time',
-            location: 'On Campus',
-            salary: 'RM12.00/hour',
-            hours: '5-20 hours/week',
-            description: 'Provide one-on-one and group tutoring for undergraduate mathematics courses.',
-            requirements: ['Strong mathematics background', 'Previous tutoring experience preferred', 'Patience and empathy'],
-            posted: '1 day ago',
-            rating: 4.9,
-            image: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=400',
-        },
-        {
-            id: 3,
-            title: 'Campus Tour Guide',
-            company: 'Admissions Office',
-            category: 'campus',
-            type: 'part-time',
-            location: 'On Campus',
-            salary: 'RM10.00/hour',
-            hours: '6-12 hours/week',
-            description: 'Lead prospective students and families on campus tours, sharing your university experience.',
-            requirements: ['Enthusiastic personality', 'Good public speaking skills', 'Knowledge of campus'],
-            posted: '3 days ago',
-            rating: 4.7,
-            image: 'https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=400',
-        },
-        {
-            id: 4,
-            title: 'Web Development Intern',
-            company: 'IT Services',
-            category: 'tech',
-            type: 'internship',
-            location: 'Hybrid',
-            salary: 'RM11.00/hour',
-            hours: '15-20 hours/week',
-            description: 'Work on university web projects, learn modern development practices, and gain real experience.',
-            requirements: ['Basic HTML/CSS/JavaScript', 'Eagerness to learn', 'CS or related major preferred'],
-            posted: '1 week ago',
-            rating: 4.6,
-            image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=400',
-        },
-        {
-            id: 5,
-            title: 'Café Barista',
-            company: 'Campus Coffee Co.',
-            category: 'food',
-            type: 'part-time',
-            location: 'Student Union',
-            salary: 'RM9.00/hour + tips',
-            hours: '12-25 hours/week',
-            description: 'Prepare coffee and light meals for students and staff in our busy campus café.',
-            requirements: ['Customer service experience', 'Ability to work in fast-paced environment', 'Morning availability'],
-            posted: '4 days ago',
-            rating: 4.4,
-            image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400',
-        },
-        {
-            id: 6,
-            title: 'Research Assistant',
-            company: 'Psychology Department',
-            category: 'campus',
-            type: 'work-study',
-            location: 'Psychology Building',
-            salary: 'RM10.50/hour',
-            hours: '8-15 hours/week',
-            description: 'Assist with data collection, literature reviews, and research projects under faculty supervision.',
-            requirements: ['Psychology major preferred', 'Strong analytical skills', 'Attention to detail'],
-            posted: '5 days ago',
-            rating: 4.8,
-            image: 'https://images.pexels.com/photos/8471918/pexels-photo-8471918.jpeg?auto=compress&cs=tinysrgb&w=400',
-        },
-    ];
+    const jobs = [];
 
     const filteredJobs = jobs.filter(job => {
         const matchesCategory = selectedCategory === 'all' || job.category === selectedCategory;
@@ -183,15 +92,7 @@ const Jobs = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-                        <div className="text-2xl font-bold text-purple-600 mb-2">50+</div>
-                        <div className="text-gray-600">Active Jobs</div>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-                        <div className="text-2xl font-bold text-yellow-500 mb-2">£9-15</div>
-                        <div className="text-gray-600">Hourly Rate</div>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-white rounded-xl p-6 text-center shadow-lg">
                         <div className="text-2xl font-bold text-green-600 mb-2">800+</div>
                         <div className="text-gray-600">Students Employed</div>
@@ -283,8 +184,8 @@ const Jobs = () => {
                 {filteredJobs.length === 0 && (
                     <div className="text-center py-12">
                         <Briefcase className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">No jobs found</h3>
-                        <p className="text-gray-600">Try adjusting your search or filter criteria.</p>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">No Jobs Currently Available</h3>
+                        <p className="text-gray-600">Check back soon for new opportunities!</p>
                     </div>
                 )}
 
