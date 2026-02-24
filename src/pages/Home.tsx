@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, UserCheck, Briefcase, ArrowRight, ChevronLeft, ChevronRight, Ticket } from 'lucide-react';
+import GradientText from '../components/GradientText';
 
 const Home = () => {
     const [currentExecIndex, setCurrentExecIndex] = useState(0);
@@ -198,7 +199,9 @@ const Home = () => {
                         <div className="text-white animate-fade-in">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-down">
                                 Welcome to the{' '}
-                                <span className="text-yellow-400 block">Students' Association</span>
+                                <GradientText colors={['#FFD700', '#FFA500', '#FF69B4']} animationSpeed={8} direction="horizontal">
+                                    <span className="block">Students' Association</span>
+                                </GradientText>
                             </h1>
                             <p className="text-lg md:text-xl mb-8 text-purple-100 max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
                                 Your one-stop destination for thrift shopping, event tickets, club registration, and student job opportunities at the University of Nottingham Malaysia.

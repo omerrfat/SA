@@ -1,0 +1,25 @@
+.animated-gradient-text {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-gradient-text .text-content {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.animated-gradient-text.with-border .gradient-overlay {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+.animated-gradient-text.with-border {
+  background: white;
+  border-radius: 0.5rem;
+}
