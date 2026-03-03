@@ -18,6 +18,7 @@ const Header = () => {
     const aboutItems = [
         { name: 'Student Executives', path: '/student-executives' },
         { name: 'Student Council', path: '/student-council' },
+        { name: 'SA Staff', path: '/sa-staff' },
     ];
 
     const toggleMenu = () => {

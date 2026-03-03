@@ -8,6 +8,7 @@ import Registration from './pages/Registration';
 import Jobs from './pages/Jobs';
 import StudentExecutives from './pages/StudentExecutives';
 import StudentCouncil from './pages/StudentCouncil';
+import SAStaff from './pages/SAStaff';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                         <Route path="/jobs" element={<Jobs />} />
                         <Route path="/student-executives" element={<StudentExecutives />} />
                         <Route path="/student-council" element={<StudentCouncil />} />
+                        <Route path="/sa-staff" element={<SAStaff />} />
                     </Routes>
                 </main>
             </div>

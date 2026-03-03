@@ -120,13 +120,18 @@ const StudentExecutives = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white py-20 overflow-hidden">
+                {/* Placeholder for background image */}
+                <div className="absolute inset-0 opacity-60 bg-center bg-cover" style={{
+                    backgroundImage: 'url("/Latest Logo CS/Campus photo 2 (250m).jpg")'
+                }}></div>
+
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" style={{ textShadow: '0 4px 12px rgba(83, 79, 79, 0.8)' }}>
                             Your 2025-26 Student Association Executives
                         </h1>
-                        <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
+                        <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(76, 73, 73, 0.8)' }}>
                             Meet the dedicated student leaders working to enhance your university experience and represent your voices across campus.
                         </p>
                     </div>
