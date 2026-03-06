@@ -1,99 +1,15 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, UserCheck, Briefcase, ArrowRight, ChevronLeft, ChevronRight, Ticket } from 'lucide-react';
+import { ShoppingBag, UserCheck, Briefcase, ArrowRight, Ticket } from 'lucide-react';
 import GradientText from '../components/GradientText';
 
 const Home = () => {
-    const [currentExecIndex, setCurrentExecIndex] = useState(0);
-    const [autoSlide, setAutoSlide] = useState(true);
     const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
 
     const campusImages = [
         '/campus.jpg',
         '/campus3.jpg',
         '/campus2.jpg',
-    ];
-
-    const executives = [
-        {
-            name: 'Jorden Yap',
-            position: 'SA President',
-            email: 'sapresident@nottingham.edu.my',
-            image: '/Jorden.JPG',
-            description: 'The SA President leads the association, represents student interests, and oversees major initiatives. In addition, the President manages event finances and drives sponsorship efforts to support sustainable funding.',
-
-        },
-        {
-            name: 'Chan Zhi Chen',
-            position: 'Vice President',
-            email: 'kasavp@nottingham.edu.my',
-            image: '/Zhi Chen.jpg',
-            description: 'The Vice President plays a key role in overseeing the overall affairs of the Students’ Association, ensuring smooth coordination across all departments and initiatives.',
-
-        },
-        {
-            name: 'Nurul Aisyah Syakinah binti Rodzay',
-            position: 'SA Secretary',
-            email: 'sasecretary@nottingham.edu.my',
-            image: '/Aisyah.jpeg',
-            description: 'Managing communications and documentation. Ensuring smooth operations and keeping everyone informed and connected.',
-
-        },
-        {
-            name: 'Manahil Asad',
-            position: 'Sports Officer',
-            email: 'sasports@nottingham.edu.my',
-            image: '/sports-officer.jpeg',
-            description: 'The Sports Officer manages athlete wellbeing and club operations, organizes major events like the Nations Cup, and liaises with external bodies to ensure safety and logistical support.',
-
-        },
-        {
-            name: 'Sakeena Endah Muzli',
-            position: 'Sustainability Officer',
-            email: 'sasustainability@nottingham.edu.my',
-            image: '/Kiki.jpeg',
-            description: 'Leading sustainability initiatives and environmental advocacy. Creating a greener campus for future generations.',
-
-        },
-        {
-            name: 'Farzana Binti Suhaimi',
-            position: 'Home Students\' Officer',
-            email: 'sahome@nottingham.edu.my',
-            image: '/Zee.jpeg',
-            description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
-
-        },
-        {
-            name: 'Myra Mazhar Ud Deen',
-            position: 'International Students\' Officer',
-            email: 'sainternational@nottingham.edu.my',
-            image: '/Myra Mazhar Ud Deen.PNG',
-            description: 'To serve as the first student point of contact for international students, and to bridge the gap between students and university management, while promoting cultural awareness across campus.',
-
-        },
-        {
-            name: 'Marissa Alysha Iman',
-            position: 'Activities Officer',
-            email: 'saactivities@nottingham.edu.my',
-            image: '/Marsi.jpeg',
-            description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
-
-        },
-        {
-            name: 'Leo Raymond',
-            position: 'Education Officer',
-            email: 'saeducation@nottingham.edu.my',
-            image: '/Leo.JPG',
-            description: 'The Education Officer advocates for students’ academic interests and bridges the gap between the student body and university departments. They lead and train the representative network—from Faculty to Course levels—and manage the execution of Staff–Student Forums (SSFs).'
-        },
-        {
-            name: 'Samuel Ogbonna Akuma',
-            position: 'PostGraduate Officer',
-            email: 'pg@sa.unm.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
-
-        },
     ];
 
     const features = [
@@ -127,15 +43,6 @@ const Home = () => {
         },
     ];
 
-    // Auto-slide functionality
-    useEffect(() => {
-        if (!autoSlide) return;
-        const timer = setInterval(() => {
-            setCurrentExecIndex((prev) => (prev + 1) % executives.length);
-        }, 4000); // Change every 4 seconds
-        return () => clearInterval(timer);
-    }, [autoSlide, executives.length]);
-
     // Auto-slide functionality for background images
     useEffect(() => {
         const bgTimer = setInterval(() => {
@@ -143,26 +50,6 @@ const Home = () => {
         }, 3000); // Change every 3 seconds
         return () => clearInterval(bgTimer);
     }, [campusImages.length]);
-
-    const nextExec = () => {
-        setAutoSlide(false);
-        setCurrentExecIndex((prev) => (prev + 1) % executives.length);
-        setTimeout(() => setAutoSlide(true), 5000);
-    };
-
-    const prevExec = () => {
-        setAutoSlide(false);
-        setCurrentExecIndex((prev) => (prev - 1 + executives.length) % executives.length);
-        setTimeout(() => setAutoSlide(true), 5000);
-    };
-
-    const goToExec = (index: React.SetStateAction<number>) => {
-        setAutoSlide(false);
-        setCurrentExecIndex(index);
-        setTimeout(() => setAutoSlide(true), 5000);
-    };
-
-    const currentExec = executives[currentExecIndex];
 
     return (
         <div className="min-h-screen bg-white">
@@ -246,117 +133,6 @@ const Home = () => {
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     </svg>
-                </div>
-            </section>
-
-            {/* Student Execs Carousel Section */}
-            <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Meet Your <span className="text-purple-600">Student Executive Team</span>
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Dedicated student leaders working to make your university experience unforgettable.
-                        </p>
-                    </div>
-
-                    {/* Main Carousel */}
-                    <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
-                        {/* Background Image with Overlay */}
-                        <div className="absolute inset-0">
-                            <img
-                                src={currentExec.image}
-                                alt={currentExec.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                style={{
-                                    objectPosition: currentExec.name === 'Myra Mazhar Ud Deen' ? 'center 30%' : 'center'
-                                }}
-                            />
-                        </div>
-
-                        {/* Content Overlay */}
-                        <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
-                            <div className="text-white">
-                                <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-2xl">{currentExec.name}</h3>
-                                <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-2xl">{currentExec.position}</p>
-                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-lg">
-                                    {currentExec.description}
-                                </p>
-                                <div className="flex items-center space-x-2">
-                                    <span className="text-sm md:text-base drop-shadow-lg">📧</span>
-                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-lg">
-                                        {currentExec.email}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Navigation Buttons */}
-                        <button
-                            onClick={prevExec}
-                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all duration-200 z-10"
-                            aria-label="Previous executive"
-                        >
-                            <ChevronLeft className="w-6 h-6" />
-                        </button>
-                        <button
-                            onClick={nextExec}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all duration-200 z-10"
-                            aria-label="Next executive"
-                        >
-                            <ChevronRight className="w-6 h-6" />
-                        </button>
-                    </div>
-
-                    {/* Dots Navigation */}
-                    <div className="flex justify-center gap-3 mt-8">
-                        {executives.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToExec(index)}
-                                className={`h-3 rounded-full transition-all duration-300 ${index === currentExecIndex
-                                    ? 'bg-purple-600 w-8'
-                                    : 'bg-gray-300 w-3 hover:bg-gray-400'
-                                    }`}
-                                aria-label={`Go to executive ${index + 1}`}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Thumbnails Grid */}
-                    <div className="flex justify-center mt-12">
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full max-w-4xl">
-                            {executives.map((exec, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => goToExec(index)}
-                                    className={`relative h-24 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 ${index === currentExecIndex ? 'ring-4 ring-purple-600 scale-105' : 'opacity-60 hover:opacity-100'
-                                        }`}
-                                >
-                                    <img
-                                        src={exec.image}
-                                        alt={exec.name}
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-black/30"></div>
-                                    <div className="absolute inset-0 flex items-end justify-center pb-2">
-                                        <p className="text-white text-xs font-semibold text-center line-clamp-1">{exec.name}</p>
-                                    </div>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Contact CTA */}
-                    <div className="mt-16 text-center">
-                        <p className="text-gray-600 mb-6 text-lg">
-                            Have questions or suggestions? Our executive team is here to help!
-                        </p>
-                        <button className="bg-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-purple-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-                            Contact Us
-                        </button>
-                    </div>
                 </div>
             </section>
 

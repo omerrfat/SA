@@ -6,6 +6,7 @@ const SAStaff = () => {
         {
             name: 'Divaghar Voothayakumar',
             position: 'SA Senior Officer',
+            email: 'divaghar.voothayakumar@nottingham.edu.my',
             image: '/SA Staff/diva.jpeg',
             description: 'The SA Senior Officer provides strategic oversight and guidance to the SA team. They ensure smooth day-to-day operations, coordinate with university administration, and oversee major organizational initiatives. This role is essential in maintaining the association\'s governance standards and supporting all senior staff responsibilities.',
             color: 'from-blue-600 to-blue-800',
@@ -16,6 +17,7 @@ const SAStaff = () => {
         {
             name: 'Gerard Aloysius Francis',
             position: 'SA Manager',
+            email: 'Gerard.Francis@nottingham.edu.my',
             image: '/SA Staff/gerard.jpeg',
             description: 'The SA Manager handles operational management and team coordination. They oversee project timelines, resource allocation, and ensure all departments work cohesively. The Manager bridges leadership vision with practical implementation and maintains accountability across all SA initiatives.',
             color: 'from-green-600 to-green-800',
@@ -26,6 +28,7 @@ const SAStaff = () => {
         {
             name: 'Nurul Farah Ain Nazwir',
             position: 'SA Administrative Officer',
+            email: 'nurul.nazwir@nottingham.edu.my',
             image: '/SA Staff/farah.jpeg',
             description: 'The SA Administrative Officer manages all administrative functions and documentation. They handle event logistics, financial records, scheduling, and communications coordination. This role ensures the organization runs efficiently and all processes are well-documented and accessible.',
             color: 'from-purple-600 to-purple-800',
@@ -36,6 +39,7 @@ const SAStaff = () => {
         {
             name: 'Nurul Syammimi Mohd Nazri',
             position: 'SA Officer',
+            email: 'Syammimi.nazri@nottingham.edu.my',
             image: '/SA Staff/syammimi.jpeg',
             description: 'The SA Officers provide support across various departments and initiatives. They assist in event planning, member engagement, project execution, and administrative support. Officers are the backbone of day-to-day operations and help bring SA initiatives to life.',
             color: 'from-orange-600 to-orange-800',
@@ -48,7 +52,7 @@ const SAStaff = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-slate-700 to-slate-900 text-white py-12 md:py-36 overflow-hidden">
+            <section className="relative bg-gradient-to-r from-slate-700 to-slate-900 text-white py-12 md:py-64 overflow-hidden">
                 {/* Placeholder for group image background */}
                 <div className="absolute inset-0 opacity-20 bg-center bg-cover" style={{
                     backgroundImage: 'url("/SA Staff/collective.jpeg")'
@@ -62,6 +66,23 @@ const SAStaff = () => {
                     <p className="text-lg md:text-xl text-slate-100 max-w-3xl animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
                         Meet the dedicated staff members who work behind the scenes to make the SA function smoothly and bring initiatives to life.
                     </p>
+                </div>
+            </section>
+
+            {/* About SA Staff Section */}
+            <section className="py-12 md:py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-8 md:p-12 border-2 border-slate-200 animate-fade-in">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-slide-down">
+                            About SA Staff
+                        </h2>
+                        <p className="text-gray-700 text-lg leading-relaxed mb-4 animate-slide-up">
+                            The SA Staff forms the operational backbone of the Students' Association, working tirelessly to support all student initiatives and ensure the smooth functioning of the organization.
+                        </p>
+                        <p className="text-gray-700 text-lg leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                            From strategic planning to day-to-day administration, our dedicated staff members are committed to creating an inclusive and vibrant campus community. They work collaboratively with student leadership to turn vision into action and ensure every SA initiative delivers maximum value to the student body.
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -103,11 +124,19 @@ const SAStaff = () => {
                                 {/* Content */}
                                 <div className="p-6 md:p-8">
                                     {/* Position */}
-                                    <div className="mb-6">
-                                        <h3 className={`text-2xl md:text-3xl font-bold ${member.accentColor} mb-2`}>
+                                    <div className="mb-6 pb-4 border-b border-gray-200">
+                                        <h3 className={`text-2xl md:text-3xl font-bold ${member.accentColor} mb-3`}>
                                             {member.position}
                                         </h3>
-                                        <div className={`w-12 h-1 bg-gradient-to-r ${member.color} rounded-full`}></div>
+                                        <div className={`w-12 h-1 bg-gradient-to-r ${member.color} rounded-full mb-4`}></div>
+                                        {/* Email */}
+                                        <a
+                                            href={`mailto:${member.email}`}
+                                            className="inline-flex items-center text-sm font-semibold text-gray-700 hover:text-slate-900 transition-colors duration-200 break-all"
+                                        >
+                                            <span className="mr-2 flex-shrink-0">📧</span>
+                                            <span className="underline">{member.email}</span>
+                                        </a>
                                     </div>
 
                                     {/* Description Section */}
@@ -126,22 +155,6 @@ const SAStaff = () => {
                 </div>
             </section>
 
-            {/* About SA Staff Section */}
-            <section className="py-12 md:py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-8 md:p-12 border-2 border-slate-200">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                            About SA Staff
-                        </h2>
-                        <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                            The SA Staff forms the operational backbone of the Students' Association, working tirelessly to support all student initiatives and ensure the smooth functioning of the organization.
-                        </p>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                            From strategic planning to day-to-day administration, our dedicated staff members are committed to creating an inclusive and vibrant campus community. They work collaboratively with student leadership to turn vision into action and ensure every SA initiative delivers maximum value to the student body.
-                        </p>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

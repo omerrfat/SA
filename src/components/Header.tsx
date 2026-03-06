@@ -10,13 +10,13 @@ const Header = () => {
     const navigationItems = [
         { name: 'Home', path: '/', icon: Users },
         { name: 'Nott-a-Shop', path: '/shop', icon: ShoppingBag },
-        { name: 'Events', path: '/tickets', icon: Ticket },
+        { name: 'UNM Events', path: '/tickets', icon: Ticket },
         { name: 'Registration', path: '/registration', icon: UserCheck },
         { name: 'Jobs', path: '/jobs', icon: Briefcase },
     ];
 
     const aboutItems = [
-        { name: 'Student Executives', path: '/student-executives' },
+        { name: 'SAExecs', path: '/student-executives' },
         { name: 'Student Council', path: '/student-council' },
         { name: 'SA Staff', path: '/sa-staff' },
     ];

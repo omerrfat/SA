@@ -129,11 +129,59 @@ const StudentExecutives = () => {
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
                         <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" style={{ textShadow: '0 4px 12px rgba(83, 79, 79, 0.8)' }}>
-                            Your 2025-26 Student Association Executives
+                            Your 2025-26 Students' Association Executives
                         </h1>
                         <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(76, 73, 73, 0.8)' }}>
                             Meet the dedicated student leaders working to enhance your university experience and represent your voices across campus.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* About the Students' Association Section */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                                About the Students' Association
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                                The Students' Association is the representative body for all students at the University of Nottingham Malaysia Campus. Our mission is to enhance student life, represent your interests, and create a vibrant campus community.
+                            </p>
+                            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                                With 10 dedicated executives, we oversee everything from sports and sustainability to academic support and international student welfare. We're here to listen, advocate, and create opportunities for every student.
+                            </p>
+                            <div className="flex items-center space-x-4 mt-8">
+                                <MapPin className="w-6 h-6 text-purple-600" />
+                                <div>
+                                    <p className="font-semibold text-gray-900">Location</p>
+                                    <p className="text-gray-600">H block, University of Nottingham Malaysia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white rounded-2xl p-8">
+                            <h3 className="text-2xl font-bold mb-6">Get Involved</h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-start space-x-3">
+                                    <span className="text-yellow-400 text-2xl">✓</span>
+                                    <span>Join clubs and societies that match your interests</span>
+                                </li>
+                                <li className="flex items-start space-x-3">
+                                    <span className="text-yellow-400 text-2xl">✓</span>
+                                    <span>Attend exciting events throughout the year</span>
+                                </li>
+                                <li className="flex items-start space-x-3">
+                                    <span className="text-yellow-400 text-2xl">✓</span>
+                                    <span>Volunteer and make a difference on campus</span>
+                                </li>
+                                <li className="flex items-start space-x-3">
+                                    <span className="text-yellow-400 text-2xl">✓</span>
+                                    <span>Voice your concerns and suggestions to leadership</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -219,7 +267,7 @@ const StudentExecutives = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12 animate-fade-in">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
-                            The Full Executive Team
+                            Full Executive Team
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
                             Representing every aspect of student life at the University of Nottingham Malaysia.
@@ -258,54 +306,6 @@ const StudentExecutives = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* About Section */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                                About the Student Association
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                                The Students' Association is the representative body for all students at the University of Nottingham Malaysia Campus. Our mission is to enhance student life, represent your interests, and create a vibrant campus community.
-                            </p>
-                            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                                With 10 dedicated executives, we oversee everything from sports and sustainability to academic support and international student welfare. We're here to listen, advocate, and create opportunities for every student.
-                            </p>
-                            <div className="flex items-center space-x-4 mt-8">
-                                <MapPin className="w-6 h-6 text-purple-600" />
-                                <div>
-                                    <p className="font-semibold text-gray-900">Location</p>
-                                    <p className="text-gray-600">University of Nottingham Malaysia, Semenyih</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white rounded-2xl p-8">
-                            <h3 className="text-2xl font-bold mb-6">Get Involved</h3>
-                            <ul className="space-y-4">
-                                <li className="flex items-start space-x-3">
-                                    <span className="text-yellow-400 text-2xl">✓</span>
-                                    <span>Join clubs and societies that match your interests</span>
-                                </li>
-                                <li className="flex items-start space-x-3">
-                                    <span className="text-yellow-400 text-2xl">✓</span>
-                                    <span>Attend exciting events throughout the year</span>
-                                </li>
-                                <li className="flex items-start space-x-3">
-                                    <span className="text-yellow-400 text-2xl">✓</span>
-                                    <span>Volunteer and make a difference on campus</span>
-                                </li>
-                                <li className="flex items-start space-x-3">
-                                    <span className="text-yellow-400 text-2xl">✓</span>
-                                    <span>Voice your concerns and suggestions to leadership</span>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </section>

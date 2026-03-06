@@ -511,7 +511,7 @@ const Registration = () => {
                 {/* Header */}
                 <div className="text-center mb-12 animate-fade-in">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-slide-down">
-                        Club & Society <span className="text-purple-600">Registration</span>
+                        CS <span className="text-purple-600">Registration</span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
                         Discover amazing communities, make lifelong friends, and pursue your passions
