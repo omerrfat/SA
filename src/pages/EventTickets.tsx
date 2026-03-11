@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Ticket, Calendar, MapPin, Clock, Star, Search, Users, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { Ticket, Calendar, MapPin, Clock, Search, Users, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const EventTickets = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);
     const [currentMonth, setCurrentMonth] = useState(new Date());
-    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [selectedEvent, setSelectedEvent] = useState<typeof events[0] | null>(null);
     const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 
     const categories = [
@@ -119,7 +119,7 @@ const EventTickets = () => {
         return matchesCategory && matchesSearch;
     });
 
-    const formatDate = (dateString) => {
+    const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-GB', {
             weekday: 'long',
@@ -130,15 +130,15 @@ const EventTickets = () => {
     };
 
     // Calendar logic
-    const getDaysInMonth = (date) => {
+    const getDaysInMonth = (date: Date) => {
         return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
     };
 
-    const getFirstDayOfMonth = (date) => {
+    const getFirstDayOfMonth = (date: Date) => {
         return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
     };
 
-    const getEventsForDate = (day) => {
+    const getEventsForDate = (day: number) => {
         const dateStr = `${currentMonth.getFullYear()}-${String(currentMonth.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         return events.filter(event => event.date === dateStr);
     };
@@ -151,7 +151,7 @@ const EventTickets = () => {
         setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1));
     };
 
-    const handleEventClick = (event) => {
+    const handleEventClick = (event: typeof events[0]) => {
         setSelectedEvent(event);
         setIsEventModalOpen(true);
     };
@@ -254,7 +254,7 @@ const EventTickets = () => {
                         <div className="space-y-3 max-h-96 overflow-y-auto">
                             {events
                                 .filter(event => new Date(event.date).getMonth() === currentMonth.getMonth())
-                                .sort((a, b) => new Date(a.date) - new Date(b.date))
+                                .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
                                 .map(event => (
                                     <button
                                         key={event.id}
@@ -383,7 +383,7 @@ const EventTickets = () => {
                 {/* Header */}
                 <div className="text-center mb-8 sm:mb-12 animate-fade-in">
                     <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words animate-slide-down">
-                        Upcoming Student Association <span className="text-purple-600">Events</span>
+                        Upcoming Students' Association <span className="text-purple-600">Events</span>
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 break-words animate-slide-up">
                         Register for exciting events organized by clubs and societies across campus
@@ -398,7 +398,10 @@ const EventTickets = () => {
                     <p className="text-purple-100 mb-6 max-w-2xl mx-auto animate-slide-up">
                         Contact the Students' Association to get help organizing and promoting your club or society events.
                     </p>
-                    <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 hover:scale-105 transform">
+                    <button
+                        onClick={() => window.open('https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=2hNDJ-EYq0CX4K3G6x7Gmcf1OnmqW9FEg_JEHaP7bTxUNjFUQlJIMFJYR0MxTTFLMVpWNDcyNllDMyQlQCN0PWcu&Token=f0cf1b05c252460fa7afe5c8bb1c5dc7', '_blank')}
+                        className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 hover:scale-105 transform"
+                    >
                         Include My Event
                     </button>
                 </div>
@@ -460,8 +463,7 @@ const EventTickets = () => {
                                                     <span className="break-words">Organized by {event.organizer}</span>
                                                 </div>
                                                 <div className="flex items-center sm:ml-4">
-                                                    <Star className="w-4 h-4 text-yellow-400 fill-current mr-1 flex-shrink-0" />
-                                                    <span>{event.rating}</span>
+                                                    {/* Star rating removed as it's not in the data */}
                                                 </div>
                                             </div>
                                         </div>
