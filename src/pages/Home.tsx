@@ -2,9 +2,12 @@
 import { Link } from 'react-router-dom';
 import { ShoppingBag, UserCheck, Briefcase, ArrowRight, Ticket } from 'lucide-react';
 import GradientText from '../components/GradientText';
+import { useInView } from '../hooks/useInView';
 
 const Home = () => {
     const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
+    const { ref: featuresRef, isInView: featuresInView } = useInView({ threshold: 0.1 });
+    const { ref: ctaRef, isInView: ctaInView } = useInView({ threshold: 0.2 });
 
     const campusImages = [
         '/campus.jpg',
@@ -137,13 +140,13 @@ const Home = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20 bg-gray-50" ref={featuresRef}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16 animate-fade-in">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
+                    <div className="text-center mb-16">
+                        <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 scroll-slide-down ${featuresInView ? 'in-view' : ''}`}>
                             Everything You Need in One Place
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
+                        <p className={`text-xl text-gray-600 max-w-3xl mx-auto scroll-slide-up ${featuresInView ? 'in-view' : ''}`}>
                             From thrift shopping and event tickets to club registration and job opportunities, we've got you covered.
                         </p>
                     </div>
@@ -154,7 +157,7 @@ const Home = () => {
                             return (
                                 <div
                                     key={index}
-                                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group animate-scale-in hover:scale-105"
+                                    className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group scroll-scale-in hover:scale-105 ${featuresInView ? 'in-view' : ''}`}
                                     style={{ animationDelay: `${index * 100}ms` }}
                                 >
                                     <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
@@ -180,15 +183,15 @@ const Home = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="bg-yellow-400 py-16">
+            <section className="bg-yellow-400 py-16" ref={ctaRef}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-4">
+                    <h2 className={`text-3xl md:text-4xl font-bold text-purple-900 mb-4 scroll-slide-down ${ctaInView ? 'in-view' : ''}`}>
                         Ready to Get Started?
                     </h2>
-                    <p className="text-xl text-purple-800 mb-8 max-w-2xl mx-auto">
+                    <p className={`text-xl text-purple-800 mb-8 max-w-2xl mx-auto scroll-slide-up ${ctaInView ? 'in-view' : ''}`}>
                         Join thousands of students who are already making the most of their university experience.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className={`flex flex-col sm:flex-row gap-4 justify-center scroll-slide-up ${ctaInView ? 'in-view' : ''}`}>
                         <Link
                             to="/registration"
                             className="bg-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-purple-700 transition-colors duration-200"

@@ -120,4 +120,64 @@
     .animate-bounce-in {
         animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+
+    /* Scroll-triggered animations */
+    .scroll-fade-in {
+        opacity: 0;
+    }
+
+    .scroll-fade-in.in-view {
+        animation: fade-in 0.7s ease-in-out forwards;
+    }
+
+    .scroll-slide-up {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .scroll-slide-up.in-view {
+        animation: slide-up 0.7s ease-out forwards;
+    }
+
+    .scroll-slide-down {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    .scroll-slide-down.in-view {
+        animation: slide-down 0.7s ease-out forwards;
+    }
+
+    .scroll-slide-left {
+        opacity: 0;
+    }
+
+    .scroll-slide-left.in-view {
+        animation: slide-in-left 0.7s ease-out forwards;
+    }
+
+    .scroll-slide-right {
+        opacity: 0;
+    }
+
+    .scroll-slide-right.in-view {
+        animation: slide-in-right 0.7s ease-out forwards;
+    }
+
+    .scroll-scale-in {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    .scroll-scale-in.in-view {
+        animation: scale-in 0.7s ease-out forwards;
+    }
+
+    .scroll-bounce-in {
+        opacity: 0;
+    }
+
+    .scroll-bounce-in.in-view {
+        animation: bounce-in 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
 }
