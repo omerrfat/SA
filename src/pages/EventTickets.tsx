@@ -399,7 +399,7 @@ const EventTickets = () => {
                         Contact the Students' Association to get help organizing and promoting your club or society events.
                     </p>
                     <button
-                        onClick={() => window.open('https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=2hNDJ-EYq0CX4K3G6x7Gmcf1OnmqW9FEg_JEHaP7bTxUNjFUQlJIMFJYR0MxTTFLMVpWNDcyNllDMyQlQCN0PWcu&Token=f0cf1b05c252460fa7afe5c8bb1c5dc7', '_blank')}
+                        onClick={() => window.open('https://forms.office.com/r/AbKGLk7uQb', '_blank')}
                         className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 hover:scale-105 transform"
                     >
                         Include My Event

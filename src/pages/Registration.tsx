@@ -35,7 +35,7 @@ const Registration = () => {
             location: 'Sports Complex',
             image: '/Latest Logo CS/nufc_logo v2_Chirenjiv Singh Nija.PNG',
             tags: ['Team Sports', 'Fitness', 'Competition'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/nufc_malaysia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 3,
@@ -46,7 +46,7 @@ const Registration = () => {
             location: 'Student Union',
             image: '/Latest Logo CS/Y.E.S. Logo Colour 2025-06-23 08_54_45_Yi Gan.png',
             tags: ['Entrepreneurship', 'Business', 'Mentorship'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/yes.unm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 4,
@@ -57,7 +57,7 @@ const Registration = () => {
             location: 'Arts Building',
             image: '/Latest Logo CS/6fa8cafc-d0fc-4c57-8dd1-9eca5159bc86_Sumaiyya Farid Wajid.png',
             tags: ['Writing', 'Literature', 'Creative'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmwritesoc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 5,
@@ -68,7 +68,7 @@ const Registration = () => {
             location: 'Student Union',
             image: '/Latest Logo CS/BakeSoc logo transparent background_Sabrina Tai.png',
             tags: ['Baking', 'Cooking', 'Community'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmbakingsociety?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 6,
@@ -79,7 +79,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Beast Logo Updated_Tasha Tan.jpeg',
             tags: ['Dance', 'Performance', 'Sports'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmccheer?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 7,
@@ -90,7 +90,7 @@ const Registration = () => {
             location: 'Student Union',
             image: '/Latest Logo CS/CCS_colour (1)_Yi Wong.png',
             tags: ['Culture', 'Tradition', 'Asian'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_ccs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 8,
@@ -101,7 +101,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/club logo_Hoi Yoong.jpg',
             tags: ['Sports', 'Outdoor', 'Team Games'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_frisbeeclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 9,
@@ -112,7 +112,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/bsn_Vanessa St Steven.png',
             tags: ['Science', 'Biology', 'Career'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/bsn_unm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 10,
@@ -123,7 +123,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Club_logo Aikido Shudokan Nottingham Club_Michael Foong.png',
             tags: ['Martial Arts', 'Fitness', 'Wellness'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmc.aikido?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 11,
@@ -134,7 +134,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Copy of CF logo (black)_David Wei Xiang Tee.png',
             tags: ['Religion', 'Faith', 'Community'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmcf_/?utm_source=ig_web_button_share_sheet',
         },
         {
             id: 12,
@@ -145,7 +145,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Copy of Copy_of_new_logo-removebg-preview_Afiqah Ahmad Rushdan.png',
             tags: ['Sports', 'Fitness', 'Competition'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmnetballclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 13,
@@ -156,7 +156,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/EWBM-UNM Logo_Yan Jie Koo.png',
             tags: ['Engineering', 'Social Impact', 'Volunteering'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/ewbunm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 14,
@@ -167,7 +167,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Filmsoc Logo_Vanessa Nambiar.png',
             tags: ['Cinema', 'Films', 'Media'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm.filmsociety?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 15,
@@ -178,7 +178,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IChemE Grey Green Transparent BG - Copy (4)_Ameera Safiyah Izmir.png',
             tags: ['Engineering', 'Chemical', 'Professional'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/icheme_unm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 16,
@@ -189,7 +189,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IEEE_UNM_LOGO_Marcus Min Jie Yew.png',
             tags: ['Engineering', 'Electronics', 'Professional'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/ieee_unm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 17,
@@ -200,7 +200,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IEM UNM SS Logo_Danielle Lim.jpeg',
             tags: ['Engineering', 'Professional', 'Development'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/iem_unm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 18,
@@ -211,7 +211,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IMechE Logo (1)_Tanageswari Balamura.png',
             tags: ['Engineering', 'Mechanical', 'Professional'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/imecheunm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 19,
@@ -222,7 +222,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IMG_6041_Zainab Mohamedbhai.jpeg',
             tags: ['Culture', 'Diversity', 'Community'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/africansocietyunm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 20,
@@ -233,7 +233,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IMG_7390_Chan Loke.jpeg',
             tags: ['Sports', 'Fitness', 'Water Sports'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmswimmingclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 21,
@@ -244,7 +244,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IMG-20241021-WA0012_Ihfaz Hussain Chowdh.jpg',
             tags: ['Sports', 'Fitness', 'Cricket'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/nottscricketclub.my?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 22,
@@ -255,7 +255,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/IMG-20250719-WA0012_Usman Ahmed Khan.jpg',
             tags: ['Culture', 'Community', 'Asian'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/paksoc_unm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 23,
@@ -266,7 +266,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Indosoc logo_Jephtha Ashter Tandr.png',
             tags: ['Culture', 'Community', 'Asian'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/indosocunm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 25,
@@ -277,7 +277,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/ISoc (black)_Ibrahim Hassan.png',
             tags: ['Religion', 'Faith', 'Community'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmisocbrothers?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
         },
         {
             id: 26,
@@ -288,7 +288,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/JSOC Logo_HigherQuality_Aidan Gerard Ju Kwan.png',
             tags: ['Culture', 'Language', 'Asian'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_jsoc/',
         },
         {
             id: 27,
@@ -299,7 +299,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/LADS Logo w text (PNG Version)_Ee Lim.png',
             tags: ['Drama', 'Theater', 'Performance'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmlads/',
         },
         {
             id: 28,
@@ -310,7 +310,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/LOGO_2021 (B_W)_Jing Yap.png',
             tags: ['Sports', 'Fitness', 'Team Games'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_volleyballclub/',
         },
         {
             id: 29,
@@ -321,7 +321,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Logo_dark_Chloe Zhen Yin Ang.png',
             tags: ['Business', 'Accounting', 'Career'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_aas/',
         },
         {
             id: 30,
@@ -332,7 +332,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/MathSOC_Logo_Mohamed Fahd Haris S.jpeg',
             tags: ['Mathematics', 'Problem Solving', 'Academic'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/mathsoc.unmc/',
         },
         {
             id: 31,
@@ -343,7 +343,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/NES LOGO UPDATE PURPLE BG-01_Shun Peng.png',
             tags: ['Business', 'Economics', 'Academic'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/nes.unm/',
         },
         {
             id: 32,
@@ -354,7 +354,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Nottingham Clover Guides Society Logo_Fathima Hasna Ahamed.png',
             tags: ['Women Empowerment', 'Leadership', 'Adventure'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmcloverguides/',
         },
         {
             id: 33,
@@ -365,7 +365,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/NUBC Logo Uncut_Harvey Han Yi Khaw.jpg',
             tags: ['Sports', 'Fitness', 'Team Games'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/nubc_unm/',
         },
         {
             id: 34,
@@ -376,7 +376,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Official_Haye Donne Foong.png',
             tags: ['Gaming', 'E-Sports', 'Entertainment'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/nottgsoc/',
         },
         {
             id: 35,
@@ -387,7 +387,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/PFP (Themed)_Ammar Azril.png',
             tags: ['Politics', 'Global Affairs', 'Discussion'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/spirnott.unm/',
         },
         {
             id: 36,
@@ -398,7 +398,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/PharmNotts Logo (Transparent - Dark Blue)_En Kung.jpeg',
             tags: ['Pharmacy', 'Healthcare', 'Medical'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/pharmnotts_/',
         },
         {
             id: 37,
@@ -409,18 +409,18 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/PsychSoc Logo_Wyn Chan.png',
             tags: ['Psychology', 'Mental Health', 'Academic'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/psychsoc_unm/',
         },
         {
             id: 38,
-            name: 'Robotic Society',
+            name: 'Robotics Society',
             category: 'academic',
             members: 150,
-            description: 'Join our Robotic Society, explore robotics, and build amazing projects.',
+            description: 'Join our Robotics Society, explore robotics, and build amazing projects.',
             location: 'Media Centre',
             image: '/Latest Logo CS/RSlogo_Eugene Ooi.png',
             tags: ['Robotics', 'Engineering', 'Innovation'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/robotics_unm/',
         },
         {
             id: 39,
@@ -430,7 +430,8 @@ const Registration = () => {
             description: 'Join our Archery Club, learn archery skills, and participate in competitions.',
             location: 'Media Centre',
             image: '/Latest Logo CS/Screenshot 2025-07-18 at 6.51.26 PM_Gabriel Quah.png',
-            tags: ['Sports', 'Archery', 'Outdoor'], instagram: '',
+            tags: ['Sports', 'Archery', 'Outdoor'],
+            instagram: 'https://www.instagram.com/unmarchery/',
         },
         {
             id: 40,
@@ -441,7 +442,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Screenshot 2026-02-24 175937.png',
             tags: ['Religion', 'Faith', 'Community'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmcathsoc/',
         },
         {
             id: 41,
@@ -452,7 +453,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/SLSOC Logo_Jithindu Athapaththu.png',
             tags: ['Culture', 'Community', 'Asian'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_slsoc/',
         },
         {
             id: 42,
@@ -463,7 +464,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/SOFA Logo_Nur Mohd Badrulzaman.png',
             tags: ['Art', 'Visual Arts', 'Creative'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm.sofa/',
         },
         {
             id: 43,
@@ -474,7 +475,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/SRS logo transparent BG (1) (1)_Janani Muniandy.png',
             tags: ['Wellness', 'Mental Health', 'Relaxation'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/srs_unm/',
         },
         {
             id: 44,
@@ -485,7 +486,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/tennis club logo (green)_Benjamin Ming Yeow G.png',
             tags: ['Sports', 'Fitness', 'Outdoor'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_tennisclub/',
         },
         {
             id: 45,
@@ -496,7 +497,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/TouchLogo_Nashita Marjan.png',
             tags: ['Sports', 'Fitness', 'Rugby'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmctouch/',
         },
         {
             id: 46,
@@ -507,7 +508,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/UNM Billiards Club Logo_Li Pua.png',
             tags: ['Games', 'Billiards', 'Social'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unm_billiardsclub/',
         },
         {
             id: 47,
@@ -518,7 +519,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Screenshot 2026-02-24 182011.png',
             tags: ['Science', 'Biomedical', 'Medical'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/biomedsoc_unm/',
         },
         {
             id: 48,
@@ -529,7 +530,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/UNMIC New Logo Transparent_Teck Liew.png',
             tags: ['Finance', 'Business', 'Career'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/unmic_nottsvest/',
         },
         {
             id: 49,
@@ -540,7 +541,7 @@ const Registration = () => {
             location: 'Media Centre',
             image: '/Latest Logo CS/Wolves Full Colour Transparent Logo_Collen Yang.png',
             tags: ['Sports', 'Fitness', 'Team Games'],
-            instagram: '',
+            instagram: 'https://www.instagram.com/nottinghamwolvesdc/',
         },
     ]
 
