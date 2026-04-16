@@ -47,6 +47,17 @@ const SAStaff = () => {
             accentColor: 'text-orange-600',
             borderColor: 'border-orange-200',
         },
+        {
+            name: 'Zaki Syahmi',
+            position: 'SA Senior Officer',
+            email: 'Zaki.Syahmi@nottingham.edu.my',
+            image: '/SA Staff/zaki.jpeg',
+            description: 'The SA Senior Officers provide strategic oversight and guidance to the SA team. They ensure smooth day-to-day operations, coordinate with university administration, and oversee major organizational initiatives. This role is essential in maintaining the association\'s governance standards and supporting all senior staff responsibilities.',
+            color: 'from-blue-600 to-blue-800',
+            bgLight: 'bg-blue-50',
+            accentColor: 'text-orange-600',
+            borderColor: 'border-orange-200',
+        },
     ];
 
     return (

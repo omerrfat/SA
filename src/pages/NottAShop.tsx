@@ -52,56 +52,7 @@ const NottAShop = () => {
         },
     ];
 
-    const products = [
-        // Club Merchandise
-        {
-            id: 4,
-            name: 'CS Society T-Shirt',
-            price: 'RM18.00',
-            category: 'club-merch',
-            type: 'Club Merch',
-            image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400',
-            condition: 'New',
-        },
-        {
-            id: 5,
-            name: 'Football Club Jersey',
-            price: 'RM25.00',
-            category: 'club-merch',
-            type: 'Club Merch',
-            image: 'https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=400',
-            condition: 'New',
-        },
-        {
-            id: 6,
-            name: 'Photography Club Tote Bag',
-            price: 'RM10.00',
-            category: 'club-merch',
-            type: 'Club Merch',
-            image: 'https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=400',
-            condition: 'New',
-        },
-        // Official Nottingham Merchandise
-        {
-            id: 7,
-            name: 'University of Nottingham Hoodie',
-            price: 'RM45.00',
-            category: 'official',
-            type: 'Official Merch',
-            image: 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=400',
-
-            condition: 'New',
-        },
-        {
-            id: 8,
-            name: 'Nottingham Malaysia Campus Mug',
-            price: 'RM12.00',
-            category: 'official',
-            type: 'Official Merch',
-            image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400',
-            condition: 'New',
-        },
-    ];
+    const products = [];
 
     const filteredProducts = products.filter(product => {
         const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
@@ -134,6 +85,16 @@ const NottAShop = () => {
                         featuring merchandise from Nott-A-Shop, various clubs & societies and 2nd hand thrift items.
                     </p>
                 </div>
+                {/* Out of Stock Notifier */}
+                {products.length === 0 && (
+                    <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-8 mb-12 text-center">
+                        <ShoppingBag className="w-16 h-16 text-red-500 mx-auto mb-4" />
+                        <h2 className="text-2xl md:text-3xl font-bold text-red-700 mb-2">
+                            Stock is all out!
+                        </h2>
+                        <p className="text-red-600 text-lg">Check back later for new merchandise</p>
+                    </div>
+                )}
                 {/* Model Photos Section */}
                 <div className="mb-12">
                     <div className="relative">
