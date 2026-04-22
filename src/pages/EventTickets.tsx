@@ -18,98 +18,7 @@ const EventTickets = () => {
         { id: 'entertainment', name: 'Entertainment' },
     ];
 
-    const events = [
-        {
-            id: 1,
-            name: 'CS Society Annual Ball',
-            category: 'social',
-            date: '2024-03-15',
-            time: '7:00 PM',
-            location: 'Grand Ballroom, Student Union',
-            organizer: 'Computer Science Society',
-            description: 'Join us for an elegant evening of dining, dancing, and networking with fellow CS students.',
-            image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=400',
-            capacity: 200,
-            sold: 150,
-            available: true,
-            price: 'RM 25',
-        },
-        {
-            id: 2,
-            name: 'Tech Talk: AI in Healthcare',
-            category: 'academic',
-            date: '2024-02-28',
-            time: '2:00 PM',
-            location: 'Lecture Theatre A',
-            organizer: 'Engineering Society',
-            description: 'Explore the latest developments in artificial intelligence applications in healthcare.',
-            image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=400',
-            capacity: 100,
-            sold: 75,
-            available: true,
-            price: 'Free',
-        },
-        {
-            id: 3,
-            name: 'International Food Festival',
-            category: 'cultural',
-            date: '2024-03-08',
-            time: '11:00 AM',
-            location: 'Campus Quad',
-            organizer: 'International Students Society',
-            description: 'Taste authentic cuisines from around the world prepared by international students.',
-            image: 'https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400',
-            capacity: 300,
-            sold: 180,
-            available: true,
-            price: 'RM 15',
-        },
-        {
-            id: 4,
-            name: 'Inter-College Football Championship',
-            category: 'sports',
-            date: '2024-03-20',
-            time: '3:00 PM',
-            location: 'Sports Complex Field',
-            organizer: 'Sports Committee',
-            description: 'Cheer for your college in the ultimate football showdown.',
-            image: 'https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=400',
-            capacity: 500,
-            sold: 320,
-            available: true,
-            price: 'RM 10',
-        },
-        {
-            id: 5,
-            name: 'Comedy Night',
-            category: 'entertainment',
-            date: '2024-03-12',
-            time: '8:00 PM',
-            location: 'Student Union Main Hall',
-            organizer: 'Entertainment Committee',
-            description: 'Laugh the night away with professional comedians and student performers.',
-            image: 'https://images.pexels.com/photos/7688460/pexels-photo-7688460.jpeg?auto=compress&cs=tinysrgb&w=400',
-            capacity: 250,
-            sold: 200,
-            available: true,
-            price: 'RM 20',
-        },
-        {
-            id: 6,
-            name: 'Photography Exhibition Opening',
-            category: 'cultural',
-            date: '2024-02-25',
-            time: '6:00 PM',
-            location: 'Art Gallery, Student Union',
-            organizer: 'Photography Club',
-            description: 'Discover stunning photography works by talented student photographers.',
-            image: 'https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=400',
-            capacity: 80,
-            sold: 45,
-            available: true,
-            price: 'Free',
-        },
-    ];
+    const events: any[] = [];
 
     const filteredEvents = events.filter(event => {
         const matchesCategory = selectedCategory === 'all' || event.category === selectedCategory;
@@ -533,10 +442,10 @@ const EventTickets = () => {
                 </div>
 
                 {filteredEvents.length === 0 && (
-                    <div className="text-center py-12">
+                    <div className="text-center py-16">
                         <Ticket className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">No events found</h3>
-                        <p className="text-gray-600">Try adjusting your search or filter criteria.</p>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">No Events Currently Ongoing</h3>
+                        <p className="text-gray-600 text-lg">There are no events currently available. Please check back later for more exciting opportunities!</p>
                     </div>
                 )}
 
