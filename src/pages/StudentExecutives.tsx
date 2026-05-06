@@ -82,7 +82,7 @@ const StudentExecutives = () => {
             name: 'Samuel Ogbonna Akuma',
             position: 'PostGraduate Officer',
             email: 'pg@sa.unm.edu.my',
-            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
+            image: '/SA PGO pic.jpg.jpeg',
             description: 'Representing postgraduate student interests and addressing unique challenges. Supporting research and academic development.',
             color: 'from-rose-600 to-rose-800',
         },

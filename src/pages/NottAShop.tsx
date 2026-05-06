@@ -27,28 +27,13 @@ const NottAShop = () => {
     const modelPhotos = [
         {
             id: 1,
-            url: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600',
-            caption: 'CS Society T-Shirt',
+            url: '/NAS/IMG_6761.JPG',
+            caption: 'UNM Christmas Drop',
         },
         {
             id: 2,
-            url: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600',
-            caption: 'Official Nottingham Hoodie',
-        },
-        {
-            id: 3,
-            url: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600',
-            caption: 'Football Club Jersey',
-        },
-        {
-            id: 4,
-            url: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600',
-            caption: 'Casual Thrift Style',
-        },
-        {
-            id: 5,
-            url: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600',
-            caption: 'Photography Club Tote Bag',
+            url: '/NAS/IMG_6797.JPG',
+            caption: 'UNM Christmas Drop',
         },
     ];
 
