@@ -1,13 +1,14 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, UserCheck, Briefcase, ArrowRight, Ticket } from 'lucide-react';
-import GradientText from '../components/GradientText';
 import { useInView } from '../hooks/useInView';
+import TextCursorProximity from '../components/TextCursorProximity';
 
 const Home = () => {
     const [currentBgImageIndex, setCurrentBgImageIndex] = useState(0);
     const { ref: featuresRef, isInView: featuresInView } = useInView({ threshold: 0.1 });
     const { ref: ctaRef, isInView: ctaInView } = useInView({ threshold: 0.2 });
+    const heroRef = useRef<HTMLDivElement>(null);
 
     const campusImages = [
         '/campus.jpg',
@@ -57,7 +58,7 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
                 {/* Background Images Carousel */}
                 <div className="absolute inset-0 z-0">
                     <div className="relative w-full h-full">
@@ -88,10 +89,28 @@ const Home = () => {
                         {/* Text Content - Left Side */}
                         <div className="text-white animate-fade-in">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-down">
-                                Welcome to the{' '}
-                                <GradientText colors={['#FFD700', '#FFA500', '#FF69B4']} animationSpeed={8} direction="horizontal">
-                                    <span className="block">Students' Association</span>
-                                </GradientText>
+                                <TextCursorProximity
+                                    label="Welcome to the"
+                                    containerRef={heroRef}
+                                    radius={150}
+                                    falloff="gaussian"
+                                    styles={{
+                                        color: { from: "#FFF", to: "#FFD700" },
+                                        textShadow: { from: "0 0 0px rgba(255,255,255,0)", to: "0 0 15px rgba(255, 215, 0, 0.8)" }
+                                    }}
+                                />{' '}
+                                <span className="block">
+                                    <TextCursorProximity
+                                        label="Students' Association"
+                                        containerRef={heroRef}
+                                        radius={150}
+                                        falloff="gaussian"
+                                        styles={{
+                                            color: { from: "#FFF", to: "#FFD700" },
+                                            textShadow: { from: "0 0 0px rgba(255,255,255,0)", to: "0 0 15px rgba(255, 215, 0, 0.8)" }
+                                        }}
+                                    />
+                                </span>
                             </h1>
                             <p className="text-lg md:text-xl mb-8 text-purple-100 max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
                                 Your one-stop destination for thrift shopping, event tickets, club registration, and student job opportunities at the University of Nottingham Malaysia.
