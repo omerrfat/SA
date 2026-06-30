@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { ShoppingBag, UserCheck, Briefcase, ArrowRight, Ticket } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import ScrollStack, { ScrollStackItem } from '../components/ScrollStack';
 import TextCursorProximity from '../components/TextCursorProximity';
 
 const Home = () => {
@@ -159,7 +160,7 @@ const Home = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-20 bg-gray-50" ref={featuresRef}>
+            <section className="pt-20 bg-gray-50" ref={featuresRef}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 scroll-slide-down ${featuresInView ? 'in-view' : ''}`}>
@@ -169,16 +170,13 @@ const Home = () => {
                             From thrift shopping and event tickets to club registration and job opportunities, we've got you covered.
                         </p>
                     </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                </div>
+                <div className="max-w-7xl mx-auto -mt-16 px-4 sm:px-6 lg:px-8">
+                    <ScrollStack useWindowScroll={true} itemDistance={32} itemStackDistance={15} itemScale={0.05} baseScale={0.8} blurAmount={2}>
                         {features.map((feature, index) => {
                             const Icon = feature.icon;
                             return (
-                                <div
-                                    key={index}
-                                    className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group scroll-scale-in hover:scale-105 ${featuresInView ? 'in-view' : ''}`}
-                                    style={{ animationDelay: `${index * 100}ms` }}
-                                >
+                                <ScrollStackItem key={index} itemClassName="bg-white !h-auto !my-0 !p-0 !rounded-2xl !shadow-lg group">
                                     <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
                                     <div className="p-8">
                                         <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-r ${feature.color} text-white rounded-xl mb-6`}>
@@ -194,10 +192,10 @@ const Home = () => {
                                             <ArrowRight className="w-4 h-4" />
                                         </Link>
                                     </div>
-                                </div>
+                                </ScrollStackItem>
                             );
                         })}
-                    </div>
+                    </ScrollStack>
                 </div>
             </section>
 
