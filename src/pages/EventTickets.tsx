@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Ticket, Calendar, MapPin, Clock, Search, Users, X, ChevronLeft, ChevronRight, ChevronDown, Sparkles } from 'lucide-react';
+import { Ticket, Calendar, MapPin, Clock, Search, Users, X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import Reveal from '../components/Reveal';
 
 const EventTickets = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -89,8 +90,8 @@ const EventTickets = () => {
         <div className="min-h-screen bg-gray-50 pt-8">
             {/* Event Details Modal */}
             {isEventModalOpen && selectedEvent && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-                    <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-purple-950/60 p-4 backdrop-blur-sm">
+                    <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
                         {/* Image Section */}
                         <div className="relative flex-shrink-0">
                             <img
@@ -185,30 +186,30 @@ const EventTickets = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-8 sm:mb-12 animate-fade-in">
-                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words animate-slide-down">
+                <Reveal className="text-center mb-8 sm:mb-12">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">
                         Upcoming Students' Association <span className="text-purple-600">Events</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 break-words animate-slide-up">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2 break-words">
                         Register for exciting events organized by clubs and societies across campus
                     </p>
-                </div>
+                </Reveal>
 
                 {/* CTA Section */}
-                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-8 text-center text-white animate-scale-in">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 animate-slide-down">
+                <Reveal className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl p-8 mb-8 text-center text-white">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
                         Want to Organize Your Own Event?
                     </h2>
-                    <p className="text-purple-100 mb-6 max-w-2xl mx-auto animate-slide-up">
+                    <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
                         Contact the Students' Association to get help organizing and promoting your club or society events.
                     </p>
                     <button
                         onClick={() => window.open('https://forms.office.com/r/AbKGLk7uQb', '_blank')}
-                        className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200 hover:scale-105 transform"
+                        className="sa-btn-primary bg-yellow-400 text-purple-900 hover:bg-yellow-300"
                     >
                         Include My Event
                     </button>
-                </div>
+                </Reveal>
 
                 {/* Live Calendar Reveal */}
                 <div className="mb-8 max-w-sm sm:max-w-md mx-auto" style={{ perspective: '1600px' }}>
@@ -355,7 +356,7 @@ const EventTickets = () => {
                 </div>
 
                 {/* Search and Filter */}
-                <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+                <div className="sa-card p-6 mb-8">
                     <div className="flex flex-col lg:flex-row gap-4">
                         {/* Search */}
                         <div className="flex-1 relative">
@@ -365,7 +366,7 @@ const EventTickets = () => {
                                 placeholder="Search events..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="sa-input pl-10"
                             />
                         </div>
 
@@ -392,7 +393,7 @@ const EventTickets = () => {
                     {filteredEvents.map((event) => (
                         <div
                             key={event.id}
-                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                            className="sa-card sa-card-hover overflow-hidden"
                         >
                             <div className="flex flex-col lg:flex-row">
                                 <img
@@ -481,11 +482,11 @@ const EventTickets = () => {
                 </div>
 
                 {filteredEvents.length === 0 && (
-                    <div className="text-center py-16">
+                    <Reveal className="text-center py-16">
                         <Ticket className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                         <h3 className="text-2xl font-semibold text-gray-900 mb-2">No Events Currently Ongoing</h3>
                         <p className="text-gray-600 text-lg">There are no events currently available. Please check back later for more exciting opportunities!</p>
-                    </div>
+                    </Reveal>
                 )}
 
             </div>

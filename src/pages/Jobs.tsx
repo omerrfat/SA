@@ -1,5 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Briefcase, Clock, MapPin, DollarSign, Search, Star, Building } from 'lucide-react';
+import Reveal from '../components/Reveal';
+
+interface JobListing {
+    id: number;
+    title: string;
+    company: string;
+    rating: number;
+    category: string;
+    type: string;
+    posted: string;
+    description: string;
+    salary: string;
+    hours: string;
+    location: string;
+    requirements: string[];
+    image: string;
+}
 
 const Jobs = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -24,7 +41,7 @@ const Jobs = () => {
         { id: 'internship', name: 'Internship' },
     ];
 
-    const jobs = [];
+    const jobs: JobListing[] = [];
 
     const filteredJobs = jobs.filter(job => {
         const matchesCategory = selectedCategory === 'all' || job.category === selectedCategory;
@@ -39,17 +56,17 @@ const Jobs = () => {
         <div className="min-h-screen bg-gray-50 pt-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <Reveal className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Student <span className="text-purple-600">Job Opportunities</span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         Earn money while studying with flexible part-time positions designed for students
                     </p>
-                </div>
+                </Reveal>
 
                 {/* Search and Filters */}
-                <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+                <Reveal className="sa-card p-6 mb-8">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         {/* Search */}
                         <div className="lg:col-span-1 relative">
@@ -59,7 +76,7 @@ const Jobs = () => {
                                 placeholder="Search jobs..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="sa-input pl-10"
                             />
                         </div>
 
@@ -67,7 +84,7 @@ const Jobs = () => {
                         <select
                             value={selectedCategory}
                             onChange={(e) => setSelectedCategory(e.target.value)}
-                            className="px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            className="sa-input"
                         >
                             {categories.map((category) => (
                                 <option key={category.id} value={category.id}>
@@ -80,7 +97,7 @@ const Jobs = () => {
                         <select
                             value={selectedType}
                             onChange={(e) => setSelectedType(e.target.value)}
-                            className="px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            className="sa-input"
                         >
                             {jobTypes.map((type) => (
                                 <option key={type.id} value={type.id}>
@@ -89,26 +106,26 @@ const Jobs = () => {
                             ))}
                         </select>
                     </div>
-                </div>
+                </Reveal>
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+                <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" delay={0.1}>
+                    <div className="sa-card p-6 text-center">
                         <div className="text-2xl font-bold text-green-600 mb-2">800+</div>
                         <div className="text-gray-600">Students Employed</div>
                     </div>
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+                    <div className="sa-card p-6 text-center">
                         <div className="text-2xl font-bold text-blue-600 mb-2">20</div>
                         <div className="text-gray-600">Max Hours/Week</div>
                     </div>
-                </div>
+                </Reveal>
 
                 {/* Jobs Grid */}
                 <div className="space-y-6 mb-16">
                     {filteredJobs.map((job) => (
                         <div
                             key={job.id}
-                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6"
+                            className="sa-card sa-card-hover p-6"
                         >
                             <div className="flex flex-col lg:flex-row gap-6">
                                 <img
@@ -161,17 +178,17 @@ const Jobs = () => {
                                     <div className="mb-4">
                                         <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
                                         <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                            {job.requirements.map((req, index) => (
+                                            {job.requirements.map((req: string, index: number) => (
                                                 <li key={index}>{req}</li>
                                             ))}
                                         </ul>
                                     </div>
 
                                     <div className="flex flex-col sm:flex-row gap-3">
-                                        <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 flex-1">
+                                        <button className="sa-btn-primary flex-1">
                                             Apply Now
                                         </button>
-                                        <button className="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-200">
+                                        <button className="sa-btn-outline">
                                             Save Job
                                         </button>
                                     </div>
@@ -182,15 +199,15 @@ const Jobs = () => {
                 </div>
 
                 {filteredJobs.length === 0 && (
-                    <div className="text-center py-12">
+                    <Reveal className="text-center py-12">
                         <Briefcase className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">No Jobs Currently Available</h3>
                         <p className="text-gray-600">Check back soon for new opportunities!</p>
-                    </div>
+                    </Reveal>
                 )}
 
                 {/* CTA Section */}
-                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 mb-8 text-center text-white">
+                <Reveal className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl p-8 mb-8 text-center text-white">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">
                         Ready to Start Your Career Journey?
                     </h2>
@@ -198,14 +215,14 @@ const Jobs = () => {
                         Join hundreds of students who are gaining valuable work experience while earning money to support their studies.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200">
+                        <button className="sa-btn-primary bg-yellow-400 text-purple-900 hover:bg-yellow-300">
                             Create Job Alert
                         </button>
-                        <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-colors duration-200">
+                        <button className="sa-btn-outline border-white text-white hover:bg-white hover:text-purple-600">
                             Upload Resume
                         </button>
                     </div>
-                </div>
+                </Reveal>
             </div>
         </div>
     );

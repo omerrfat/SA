@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import { Users, Search, Filter, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { Users, Search, ArrowRight } from 'lucide-react';
+import Reveal from '../components/Reveal';
+import { useStaggerReveal } from '../hooks/useGsapReveal';
 
 const Registration = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const clubsGridRef = useStaggerReveal<HTMLDivElement>('.club-card');
 
     const categories = [
         { id: 'all', name: 'All Categories' },
@@ -557,17 +560,17 @@ const Registration = () => {
         <div className="min-h-screen bg-gray-50 pt-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-12 animate-fade-in">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-slide-down">
+                <Reveal className="text-center mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         CS <span className="text-purple-600">Registration</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         Discover amazing communities, make lifelong friends, and pursue your passions
                     </p>
-                </div>
+                </Reveal>
 
                 {/* Search and Filter */}
-                <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+                <Reveal className="sa-card p-6 mb-8">
                     <div className="flex flex-col lg:flex-row gap-4">
                         {/* Search */}
                         <div className="flex-1 relative">
@@ -577,7 +580,7 @@ const Registration = () => {
                                 placeholder="Search clubs and societies..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="sa-input pl-10"
                             />
                         </div>
 
@@ -597,29 +600,26 @@ const Registration = () => {
                             ))}
                         </div>
                     </div>
-                </div>
+                </Reveal>
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+                <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto" delay={0.1}>
+                    <div className="sa-card p-6 text-center">
                         <div className="text-3xl font-bold text-purple-600 mb-2">80+</div>
                         <div className="text-gray-600">Active Clubs</div>
                     </div>
-                    <div className="bg-white rounded-xl p-6 text-center shadow-lg">
+                    <div className="sa-card p-6 text-center">
                         <div className="text-3xl font-bold text-yellow-500 mb-2">2,500+</div>
                         <div className="text-gray-600">Members</div>
                     </div>
-                </div>
+                </Reveal>
 
                 {/* Clubs Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                    {filteredClubs.map((club, index) => (
+                <div ref={clubsGridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                    {filteredClubs.map((club) => (
                         <div
                             key={club.id}
-                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden animate-scale-in hover:scale-105"
-                            style={{
-                                animationDelay: `${index * 100}ms`,
-                            }}
+                            className="club-card sa-card sa-card-hover overflow-hidden"
                         >
                             <div className="flex flex-col">
                                 <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
@@ -669,25 +669,25 @@ const Registration = () => {
                 </div>
 
                 {filteredClubs.length === 0 && (
-                    <div className="text-center py-12">
+                    <Reveal className="text-center py-12">
                         <Users className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">No clubs found</h3>
                         <p className="text-gray-600">Try adjusting your search or filter criteria.</p>
-                    </div>
+                    </Reveal>
                 )}
 
                 {/* CTA Section */}
-                <div className="bg-yellow-400 rounded-2xl p-8 mb-8 text-center">
+                <Reveal className="bg-yellow-400 rounded-3xl p-8 mb-8 text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
                         Can't find what you're looking for?
                     </h2>
                     <p className="text-purple-800 mb-6 max-w-2xl mx-auto">
                         Start your own club or society! We'll help you get organized and connect with like-minded students.
                     </p>
-                    <button className="bg-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-purple-700 transition-colors duration-200">
+                    <button className="sa-btn-primary">
                         Start a New Club
                     </button>
-                </div>
+                </Reveal>
             </div>
         </div>
     );

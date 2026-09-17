@@ -1,10 +1,21 @@
 import React, { useState, useRef } from 'react';
-import { ShoppingBag, Shirt, Star, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShoppingBag, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import Reveal from '../components/Reveal';
+
+interface Product {
+    id: number;
+    name: string;
+    image: string;
+    type: string;
+    condition: string;
+    price: string;
+    category: string;
+}
 
 const NottAShop = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [activeCategory, setActiveCategory] = useState('all');
-    const modelPhotosRef = useRef(null);
+    const modelPhotosRef = useRef<HTMLDivElement>(null);
 
     // Hide scrollbar styles
     React.useEffect(() => {
@@ -15,7 +26,9 @@ const NottAShop = () => {
             }
         `;
         document.head.appendChild(style);
-        return () => document.head.removeChild(style);
+        return () => {
+            document.head.removeChild(style);
+        };
     }, []);
 
     const categories = [
@@ -37,7 +50,7 @@ const NottAShop = () => {
         },
     ];
 
-    const products = [];
+    const products: Product[] = [];
 
     const filteredProducts = products.filter(product => {
         const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
@@ -62,23 +75,23 @@ const NottAShop = () => {
         <div className="min-h-screen bg-gray-50 pt-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <Reveal className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Merchandises
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        featuring merchandise from Nott-A-Shop, various clubs & societies and 2nd hand thrift items.
+                        featuring merchandise from Nott-A-Shop, various clubs & societies and 2nd hand thrift items.
                     </p>
-                </div>
+                </Reveal>
                 {/* Out of Stock Notifier */}
                 {products.length === 0 && (
-                    <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-8 mb-12 text-center">
+                    <Reveal className="bg-red-50 border border-red-200 rounded-3xl p-8 mb-12 text-center">
                         <ShoppingBag className="w-16 h-16 text-red-500 mx-auto mb-4" />
                         <h2 className="text-2xl md:text-3xl font-bold text-red-700 mb-2">
                             Stock is all out!
                         </h2>
                         <p className="text-red-600 text-lg">Check back later for new merchandise</p>
-                    </div>
+                    </Reveal>
                 )}
                 {/* Model Photos Section */}
                 <div className="mb-12">
@@ -114,7 +127,7 @@ const NottAShop = () => {
                             {modelPhotos.map((photo) => (
                                 <div
                                     key={photo.id}
-                                    className="flex-shrink-0 w-96 h-[28rem] rounded-2xl overflow-hidden shadow-lg group"
+                                    className="flex-shrink-0 w-96 h-[28rem] rounded-3xl overflow-hidden sa-card group"
                                 >
                                     <div className="relative w-full h-full">
                                         <img
@@ -134,7 +147,7 @@ const NottAShop = () => {
                 </div>
 
                 {/* Search and Filter */}
-                <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+                <div className="sa-card p-6 mb-8">
                     <div className="flex flex-col lg:flex-row gap-4">
                         {/* Search */}
                         <div className="flex-1 relative">
@@ -144,7 +157,7 @@ const NottAShop = () => {
                                 placeholder="Search for items..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="sa-input pl-10"
                             />
                         </div>
 
@@ -175,7 +188,7 @@ const NottAShop = () => {
                     {filteredProducts.map((product) => (
                         <div
                             key={product.id}
-                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                            className="sa-card sa-card-hover overflow-hidden group"
                         >
                             <div className="relative">
                                 <img
@@ -212,15 +225,15 @@ const NottAShop = () => {
                 </div>
 
                 {filteredProducts.length === 0 && (
-                    <div className="text-center py-12">
+                    <Reveal className="text-center py-12">
                         <ShoppingBag className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">No items found</h3>
                         <p className="text-gray-600">Try adjusting your search or filter criteria.</p>
-                    </div>
+                    </Reveal>
                 )}
 
                 {/* Info Section */}
-                <div className="bg-yellow-400 rounded-2xl p-8 mb-8 text-center">
+                <Reveal className="bg-yellow-400 rounded-3xl p-8 mb-8 text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
                         Sustainable Shopping at Its Best
                     </h2>
@@ -242,7 +255,7 @@ const NottAShop = () => {
                             <p className="text-sm text-purple-800">Authentic Nottingham merchandise</p>
                         </div>
                     </div>
-                </div>
+                </Reveal>
             </div>
         </div>
     );

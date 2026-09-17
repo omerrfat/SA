@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Mail, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import Reveal from '../components/Reveal';
+import TeamCard from '../components/TeamCard';
+import { useStaggerReveal } from '../hooks/useGsapReveal';
+import { gsap, useGSAP } from '../lib/gsap';
+import type { TeamMember } from '../types/team';
 
 const StudentExecutives = () => {
     const [currentExecIndex, setCurrentExecIndex] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
+    const spotlightRef = useRef<HTMLDivElement>(null);
+    const spotlightSectionRef = useRef<HTMLDivElement>(null);
 
-    const executives = [
+    const executives: TeamMember[] = [
         {
             name: 'Jorden Yap',
             position: 'SA President',
@@ -48,7 +55,7 @@ const StudentExecutives = () => {
         },
         {
             name: 'Farzana Binti Suhaimi',
-            position: 'Home Students\' Officer',
+            position: "Home Students' Officer",
             email: 'sahome@nottingham.edu.my',
             image: '/Zee.jpeg',
             description: 'Advocating for student wellbeing and support services. Your go-to person for welfare concerns and mental health initiatives.',
@@ -56,11 +63,12 @@ const StudentExecutives = () => {
         },
         {
             name: 'Myra Mazhar Ud Deen',
-            position: 'International Students\' Officer',
+            position: "International Students' Officer",
             email: 'sainternational@nottingham.edu.my',
             image: '/Myra Mazhar Ud Deen.PNG',
             description: 'Supporting international students and ensuring they feel welcomed and integrated into campus life. Organizing cultural events and providing support services.',
             color: 'from-indigo-600 to-indigo-800',
+            imagePosition: 'center 30%',
         },
         {
             name: 'Marissa Alysha Iman',
@@ -88,14 +96,25 @@ const StudentExecutives = () => {
         },
     ];
 
-    // Auto-slide functionality
     useEffect(() => {
         if (!autoSlide) return;
         const timer = setInterval(() => {
             setCurrentExecIndex((prev) => (prev + 1) % executives.length);
-        }, 4000);
+        }, 4500);
         return () => clearInterval(timer);
     }, [autoSlide, executives.length]);
+
+    useGSAP(
+        () => {
+            if (!spotlightRef.current) return;
+            gsap.fromTo(
+                spotlightRef.current,
+                { autoAlpha: 0.001, scale: 1.02 },
+                { autoAlpha: 1, scale: 1, duration: 0.6, ease: 'power2.out' }
+            );
+        },
+        { dependencies: [currentExecIndex] }
+    );
 
     const nextExec = () => {
         setAutoSlide(false);
@@ -115,26 +134,33 @@ const StudentExecutives = () => {
         setTimeout(() => setAutoSlide(true), 5000);
     };
 
+    const openFromGrid = (member: TeamMember) => {
+        const index = executives.findIndex((e) => e.name === member.name);
+        if (index !== -1) goToExec(index);
+        spotlightSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const gridRef = useStaggerReveal<HTMLDivElement>('.team-card');
     const currentExec = executives[currentExecIndex];
 
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white py-20 overflow-hidden">
-                {/* Placeholder for background image */}
-                <div className="absolute inset-0 opacity-60 bg-center bg-cover" style={{
+            <section className="relative bg-gradient-to-br from-purple-700 via-purple-800 to-indigo-900 text-white py-20 overflow-hidden">
+                <div className="absolute inset-0 opacity-25 bg-center bg-cover" style={{
                     backgroundImage: 'url("/Latest Logo CS/Campus photo 2 (250m).jpg")'
                 }}></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" style={{ textShadow: '0 4px 12px rgba(83, 79, 79, 0.8)' }}>
-                            Your 2025-26 Students' Association Executives
+                    <Reveal className="text-center">
+                        <p className="sa-eyebrow mb-3 text-purple-200">2025–26</p>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                            Your Students' Association Executives
                         </h1>
-                        <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(76, 73, 73, 0.8)' }}>
+                        <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
                             Meet the dedicated student leaders working to enhance your university experience and represent your voices across campus.
                         </p>
-                    </div>
+                    </Reveal>
                 </div>
             </section>
 
@@ -142,7 +168,7 @@ const StudentExecutives = () => {
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
+                        <Reveal>
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                                 About the Students' Association
                             </h2>
@@ -159,9 +185,9 @@ const StudentExecutives = () => {
                                     <p className="text-gray-600">H block, University of Nottingham Malaysia</p>
                                 </div>
                             </div>
-                        </div>
+                        </Reveal>
 
-                        <div className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white rounded-2xl p-8">
+                        <Reveal delay={0.1} className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white rounded-3xl p-8">
                             <h3 className="text-2xl font-bold mb-6">Get Involved</h3>
                             <ul className="space-y-4">
                                 <li className="flex items-start space-x-3">
@@ -181,54 +207,48 @@ const StudentExecutives = () => {
                                     <span>Voice your concerns and suggestions to leadership</span>
                                 </li>
                             </ul>
-                        </div>
+                        </Reveal>
                     </div>
                 </div>
             </section>
 
-            {/* Main Carousel Section */}
-            <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+            {/* Main Spotlight */}
+            <section ref={spotlightSectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12 animate-fade-in">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
+                    <Reveal className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             Meet the Team
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Click through to learn more about each executive and their roles.
                         </p>
-                    </div>
+                    </Reveal>
 
-                    {/* Main Carousel */}
-                    <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group animate-scale-in">
-                        {/* Background Image with Overlay */}
-                        <div className="absolute inset-0">
+                    <div className="relative h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
+                        <div ref={spotlightRef} className="absolute inset-0">
                             <img
                                 src={currentExec.image}
                                 alt={currentExec.name}
                                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                                style={{
-                                    objectPosition: currentExec.name === 'Myra Mazhar Ud Deen' ? 'center 30%' : 'center'
-                                }}
+                                style={{ objectPosition: currentExec.imagePosition ?? 'center' }}
                             />
-                        </div>
-                        {/* Content Overlay */}
-                        <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent">
-                            <div className="text-white">
-                                <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{currentExec.name}</h3>
-                                <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-lg">{currentExec.position}</p>
-                                <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-md">
-                                    {currentExec.description}
-                                </p>
-                                <div className="flex items-center space-x-2">
-                                    <Mail className="w-5 h-5 drop-shadow-md" />
-                                    <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-md">
-                                        {currentExec.email}
-                                    </a>
+                            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent">
+                                <div className="text-white">
+                                    <h3 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{currentExec.name}</h3>
+                                    <p className="text-2xl md:text-3xl text-gray-100 mb-4 drop-shadow-lg">{currentExec.position}</p>
+                                    <p className="text-base md:text-lg text-gray-100 max-w-2xl mb-6 leading-relaxed drop-shadow-md">
+                                        {currentExec.description}
+                                    </p>
+                                    <div className="flex items-center space-x-2">
+                                        <Mail className="w-5 h-5 drop-shadow-md" />
+                                        <a href={`mailto:${currentExec.email}`} className="text-gray-100 hover:text-white underline drop-shadow-md">
+                                            {currentExec.email}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Navigation Buttons */}
                         <button
                             onClick={prevExec}
                             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all duration-200 z-10"
@@ -245,15 +265,12 @@ const StudentExecutives = () => {
                         </button>
                     </div>
 
-                    {/* Dots Navigation */}
                     <div className="flex justify-center gap-3 mt-8">
                         {executives.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => goToExec(index)}
-                                className={`h-3 rounded-full transition-all duration-300 ${index === currentExecIndex
-                                    ? 'bg-purple-600 w-8'
-                                    : 'bg-gray-300 w-3 hover:bg-gray-400'
+                                className={`h-3 rounded-full transition-all duration-300 ${index === currentExecIndex ? 'bg-purple-600 w-8' : 'bg-gray-300 w-3 hover:bg-gray-400'
                                     }`}
                                 aria-label={`Go to executive ${index + 1}`}
                             />
@@ -265,46 +282,18 @@ const StudentExecutives = () => {
             {/* Full Grid Section */}
             <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12 animate-fade-in">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-slide-down">
+                    <Reveal className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             Full Executive Team
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Representing every aspect of student life at the University of Nottingham Malaysia.
                         </p>
-                    </div>
+                    </Reveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                         {executives.map((exec, index) => (
-                            <div
-                                key={index}
-                                onClick={() => goToExec(index)}
-                                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group animate-scale-in hover:scale-110"
-                                style={{ animationDelay: `${index * 50}ms` }}
-                            >
-                                {/* Image Container */}
-                                <div className="relative h-64 overflow-hidden bg-gray-200">
-                                    <img
-                                        src={exec.image}
-                                        alt={exec.name}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                                    />
-                                    <div className={`absolute inset-0 bg-gradient-to-t ${exec.color} opacity-0 group-hover:opacity-60 transition-opacity duration-300`}></div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="p-4">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-1 line-clamp-2">{exec.name}</h3>
-                                    <p className="text-sm font-semibold text-purple-600 mb-3">{exec.position}</p>
-                                    <a
-                                        href={`mailto:${exec.email}`}
-                                        className="flex items-center space-x-2 text-xs text-gray-600 hover:text-purple-600 transition-colors"
-                                    >
-                                        <Mail className="w-4 h-4" />
-                                        <span className="truncate">{exec.email}</span>
-                                    </a>
-                                </div>
-                            </div>
+                            <TeamCard key={exec.name} member={exec} onOpen={openFromGrid} active={index === currentExecIndex} />
                         ))}
                     </div>
                 </div>
@@ -319,10 +308,7 @@ const StudentExecutives = () => {
                     <p className="text-xl text-purple-800 mb-8 max-w-2xl mx-auto">
                         Reach out to any member of the executive team. We're here to help!
                     </p>
-                    <a
-                        href="mailto:sapresident@nottingham.edu.my"
-                        className="inline-block bg-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-purple-700 transition-colors duration-200"
-                    >
+                    <a href="mailto:sapresident@nottingham.edu.my" className="sa-btn-primary">
                         Contact the President
                     </a>
                 </div>

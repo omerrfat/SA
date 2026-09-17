@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -15,7 +14,7 @@ function App() {
         <Router>
             <div className="min-h-screen bg-white">
                 <Header />
-                <main>
+                <main className="pt-16">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/shop" element={<NottAShop />} />
